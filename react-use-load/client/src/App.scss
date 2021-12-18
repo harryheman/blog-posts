@@ -1,0 +1,146 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+$light: #fdfdfd;
+$dark: #3c3c3c;
+
+body {
+  background-color: $light;
+  color: $dark;
+}
+
+#root {
+  margin: 0 auto;
+  max-width: 768px;
+
+  h1,
+  h2 {
+    margin: 0.5rem 0;
+    text-align: center;
+  }
+
+  header {
+    nav {
+      margin: 1.25rem 0;
+
+      a {
+        text-decoration: none;
+        border-bottom: 1px dotted;
+      }
+    }
+  }
+
+  nav {
+    ul {
+      display: flex;
+      justify-content: center;
+      list-style: none;
+
+      li + li {
+        margin-left: 1rem;
+      }
+
+      .page-link {
+        position: relative;
+        color: deepskyblue;
+        cursor: pointer;
+
+        &.current::after {
+          content: '🏠';
+          position: absolute;
+          top: -4px;
+          left: 50%;
+          transform: translateX(-50%) scale(1.2);
+          background-color: $light;
+        }
+      }
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+  }
+
+  .product {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+    align-items: center;
+    border-radius: 4px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.25);
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .image-box {
+      margin: 0 auto;
+      width: 260px;
+
+      img {
+        width: 100%;
+        border-radius: 4px;
+      }
+    }
+
+    .text-box {
+      * {
+        margin: 0;
+      }
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 180px;
+    }
+  }
+
+  .control-box {
+    margin: 1.1rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .btn {
+      margin: 0 0.5rem;
+      width: 30px;
+      font-size: 1.1rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+
+      &:disabled {
+        opacity: 0.8;
+        cursor: not-allowed;
+      }
+
+      &.more {
+        font-size: 2rem;
+      }
+    }
+  }
+
+  .loader {
+    text-align: center;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $light;
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.3);
+  background-color: deepskyblue;
+  border-radius: 2px;
+}

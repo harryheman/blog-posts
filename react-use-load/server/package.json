@@ -1,0 +1,17 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "main": "index.mjs",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "faker": "^5.5.3",
+    "nodemon": "^2.0.13"
+  },
+  "scripts": {
+    "start": "node index.mjs",
+    "dev": "nodemon -w index.mjs"
+  }
+}

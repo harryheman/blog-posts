@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clear-Site-Data &amp; Imports Map</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="container">
+      <section class="localhost">
+        <h2>Localhost</h2>
+        <div class="buttons">
+          <button data-action="clear-storage" class="btn btn-primary">
+            Clear storages
+          </button>
+          <button data-action="clear-cookies" class="btn btn-info">
+            Clear cookies
+          </button>
+          <button data-action="clear-cache" class="btn btn-success">
+            Clear HTTP cache
+          </button>
+          <button data-action="clear-executionContexts" class="btn btn-warning">
+            Reload contexts
+          </button>
+          <button data-action="clear-*" class="btn btn-danger">
+            Clear all site data
+          </button>
+        </div>
+        <p></p>
+      </section>
+      <section class="heroku">
+        <h2>Heroku</h2>
+        <div class="buttons">
+          <button data-action="clear-storage" class="btn btn-primary">
+            Clear storages
+          </button>
+          <button data-action="clear-cookies" class="btn btn-info">
+            Clear cookies
+          </button>
+          <button data-action="clear-cache" class="btn btn-success">
+            Clear HTTP cache
+          </button>
+          <button data-action="clear-*" class="btn btn-danger">
+            Clear all site data
+          </button>
+        </div>
+        <p></p>
+      </section>
+    </main>
+
+    <script type="importmap">
+      {
+        "imports": {
+          "very-simple-fetch": "/node_modules/very-simple-fetch/index.js",
+          "idb": "/node_modules/idb/build/esm/index.js"
+        }
+      }
+    </script>
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

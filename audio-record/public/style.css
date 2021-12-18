@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #f7f7f7;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #292b2c;
+  text-align: center;
+}
+
+main {
+  flex: 1;
+}
+
+h1 {
+  margin: 1rem 0;
+  font-size: 1.8rem;
+}
+
+h2 {
+  margin: 0.75rem 0;
+  font-size: 1.4rem;
+}
+
+.btn {
+  padding: 0.5rem 1rem;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s ease-in-out;
+}
+.btn_success {
+  background-color: #5cb85c;
+}
+.btn_danger {
+  background-color: #d9534f;
+}
+.btn:hover {
+  background-color: #5bc0de;
+  color: #292b2c;
+}
+
+#record_btn {
+  width: 100px;
+  border-radius: 15%;
+}
+
+img {
+  width: 100%;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes hide {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+#record_box {
+  opacity: 0;
+}
+
+.show {
+  animation: show 0.4s linear forwards;
+}
+
+.hide {
+  animation: hide 0.4s linear forwards;
+}
+
+.action_box {
+  margin: 1rem 0;
+}
+
+#records_box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.audio_item {
+  margin: 0.5rem;
+  max-width: 320px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.audio_item .btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  background-color: #0275d8;
+  margin-right: 0.5rem;
+}
+
+footer {
+  margin: 0.5rem 0;
+}

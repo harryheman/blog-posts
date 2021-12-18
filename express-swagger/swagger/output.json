@@ -1,0 +1,196 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Todo API",
+    "description": "My todo API",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3000",
+  "basePath": "/",
+  "tags": [],
+  "schemes": [
+    "http"
+  ],
+  "consumes": [],
+  "produces": [],
+  "paths": {
+    "/todos/": {
+      "get": {
+        "tags": [],
+        "description": "Get all todos",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Array of all todos",
+            "schema": {
+              "$ref": "#/definitions/Todos"
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [],
+        "description": "Create new todo",
+        "parameters": [
+          {
+            "name": "text",
+            "in": "body",
+            "description": "New todo text",
+            "type": "object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Text"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Array of new todos",
+            "schema": {
+              "$ref": "#/definitions/Todos"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
+    "/todos/{id}": {
+      "get": {
+        "tags": [],
+        "description": "Get todo by ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Existing todo ID"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Todo with provided ID",
+            "schema": {
+              "$ref": "#/definitions/Todo"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "put": {
+        "tags": [],
+        "description": "Update existing todo",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Existing todo ID"
+          },
+          {
+            "name": "changes",
+            "in": "body",
+            "description": "Existing todo changes",
+            "type": "object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Changes"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Array of new todos",
+            "schema": {
+              "$ref": "#/definitions/Todos"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      },
+      "delete": {
+        "tags": [],
+        "description": "Remove existing todo",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "description": "Existing todo ID"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Array of new todos or empty array",
+            "schema": {
+              "$ref": "#/definitions/Todos"
+            }
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Todo": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "example": "1"
+        },
+        "text": {
+          "type": "string",
+          "example": "test"
+        },
+        "done": {
+          "type": "boolean",
+          "example": false
+        }
+      }
+    },
+    "Todos": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Todo"
+      }
+    },
+    "Text": {
+      "type": "object",
+      "properties": {
+        "text": {
+          "type": "string",
+          "example": "test"
+        }
+      }
+    },
+    "Changes": {
+      "type": "object",
+      "properties": {
+        "changes": {
+          "type": "object",
+          "properties": {
+            "text": {
+              "type": "string",
+              "example": "test"
+            },
+            "done": {
+              "type": "boolean",
+              "example": true
+            }
+          }
+        }
+      }
+    }
+  }
+}

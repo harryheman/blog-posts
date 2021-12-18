@@ -1,0 +1,17 @@
+{
+  "name": "secure-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.9",
+    "open-cli": "^7.0.0"
+  },
+  "scripts": {
+    "dev": "open-cli http://localhost:3000 && nodemon index.js",
+    "start": "node index.js"
+  }
+}

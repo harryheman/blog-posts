@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+  --dark: #1d1d1d;
+  --light: #f0f0f0;
+  --red: #c82736;
+  --green: #28a92b;
+  --blue: #2c7ad2;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: var(--light);
+}
+
+body {
+  background-color: var(--dark);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.col {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn {
+  margin: 2rem 0;
+  padding: 10px 30px;
+  border: none;
+  outline: none;
+  border-radius: 2px;
+  font-size: 1.05rem;
+  color: var(--dark);
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s;
+}
+
+.btn:active {
+  box-shadow: inset 0 2px 1px rgba(0, 0, 0, 0.7),
+    inset 0 -2px 1px rgba(0, 0, 0, 0.7), inset 2px 0 1px rgba(0, 0, 0, 0.7),
+    inset -2px 0 1px rgba(0, 0, 0, 0.7);
+  font-size: 1rem;
+}
+
+.btn.reload {
+  margin-bottom: 1rem;
+  position: absolute;
+  bottom: 0;
+}
+
+.shape {
+  margin: 1rem;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.25ch;
+  color: var(--light);
+}
+
+.square {
+  border-radius: 4px;
+}
+
+.circle {
+  border-radius: 50%;
+}
+
+.red {
+  background-color: var(--red);
+}
+
+.green {
+  background-color: var(--green);
+}
+
+.blue {
+  background-color: var(--blue);
+}
+
+.text {
+  margin-bottom: 1rem;
+}
+
+.text p {
+  font-size: 1.1rem;
+  line-height: 1.5rem;
+}
+
+.pointer {
+  cursor: pointer;
+  user-select: none;
+}

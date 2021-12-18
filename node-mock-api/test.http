@@ -1,0 +1,146 @@
+### REST Client VSCode Extension
+### todos
+###
+GET http://localhost:5000/api/todos
+
+###
+GET http://localhost:5000/api/todos/2
+
+###
+GET http://localhost:5000/api/todos/5
+
+###
+GET http://localhost:5000/api/todos?text=Sleep
+
+###
+GET http://localhost:5000/api/todos?text=Test
+
+###
+GET http://localhost:5000/api/todos?done=true
+
+###
+POST http://localhost:5000/api/todos
+content-type: application/json
+
+{
+  "id": "5",
+  "text": "Test",
+  "done": false,
+  "edit": false
+}
+
+###
+POST http://localhost:5000/api/todos
+content-type: application/json
+
+[
+  {
+    "id": "6",
+    "text": "Test2",
+    "done": false,
+    "edit": false
+  },
+  {
+    "id": "7",
+    "text": "Test3",
+    "done": true,
+    "edit": false
+  }
+]
+
+###
+PUT http://localhost:5000/api/todos/2
+content-type: application/json
+
+{
+  "text": "Test",
+  "done": false
+}
+
+###
+DELETE http://localhost:5000/api/todos/5
+
+###
+### query
+###
+GET http://localhost:5000/api/todos?limit=2
+
+###
+GET http://localhost:5000/api/todos?offset=2&limit=1
+
+###
+GET http://localhost:5000/api/todos?offset=3&limit=2
+
+###
+GET http://localhost:5000/api/todos?sort=id&order=desc
+
+###
+GET http://localhost:5000/api/todos?sort=title&order=desc
+
+###
+GET http://localhost:5000/api/todos?sort=text
+
+###
+GET http://localhost:5000/api/todos?sort=text&order=desc&offset=1&limit=2
+
+###
+### data/todos
+###
+GET http://localhost:5000/api/data/todos
+
+###
+GET http://localhost:5000/api/data/todos/2
+
+###
+GET http://localhost:5000/api/data/todos/5
+
+###
+GET http://localhost:5000/api/data/todos?text=Sleep
+
+###
+GET http://localhost:5000/api/data/todos?text=Test
+
+###
+GET http://localhost:5000/api/data/todos?done=false
+
+###
+POST http://localhost:5000/api/data/todos
+content-type: application/json
+
+{
+  "id": "5",
+  "text": "Test",
+  "done": false,
+  "edit": false
+}
+
+###
+POST http://localhost:5000/api/data/todos
+content-type: application/json
+
+[
+  {
+    "id": "6",
+    "text": "Test2",
+    "done": true,
+    "edit": false
+  },
+  {
+    "id": "7",
+    "text": "Test3",
+    "done": false,
+    "edit": false
+  }
+]
+
+###
+PUT http://localhost:5000/api/data/todos/3
+content-type: application/json
+
+{
+  "text": "Test",
+  "done": true
+}
+
+###
+DELETE http://localhost:5000/api/data/todos/7

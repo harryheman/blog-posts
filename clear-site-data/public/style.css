@@ -1,0 +1,27 @@
+* {
+  font-family: Montserrat, sans-serif;
+}
+
+.container {
+  margin-top: 1rem;
+  max-width: 756px;
+  text-align: center;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+}
+
+section + section {
+  margin-top: 2rem;
+}
+
+p {
+  margin-top: 1rem;
+}
+
+.btn {
+  margin: 0.25rem;
+}

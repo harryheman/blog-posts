@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mock API</title>
+    <link rel="icon" href="icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="text-center my-3">Mock API</h1>
+      </header>
+      <main>
+        <div>
+          <h3 class="my-3">My projects</h3>
+          <ul class="list-group" id="project_list"></ul>
+        </div>
+        <div>
+          <h3 class="my-3">New project</h3>
+          <form id="project_create">
+            <div class="mb-2">
+              <label for="project_name" class="form-label">Project name</label>
+              <input
+                type="text"
+                class="form-control mt-2"
+                name="project_name"
+                id="project_name"
+                aria-describedby="project_name"
+                placeholder="Project name"
+              />
+            </div>
+
+            <details class="mt-4" id="project_data_details">
+              <summary>Enter or paste project data</summary>
+              <textarea
+                class="form-control mt-2"
+                name="project_data"
+                id="project_data_paste"
+                rows="10"
+              ></textarea>
+            </details>
+            <div class="mt-4">
+              <label for="project_data_upload" class="form-label"
+                >Upload project data</label
+              >
+              <input
+                class="form-control mt-2"
+                type="file"
+                accept=".json"
+                name="project_data_upload"
+                id="project_data_upload"
+                aria-describedby="project_data_upload"
+              />
+            </div>
+            <button class="btn btn-success mt-4 mb-2">Create project</button>
+          </form>
+        </div>
+      </main>
+    </div>
+
+    <script src="script.js" type="module"></script>
+  </body>
+</html>

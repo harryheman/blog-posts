@@ -1,0 +1,22 @@
+.fixed {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  top: 0;
+  left: 0;
+  opacity: 0.3;
+}
+
+.fixed.sm {
+  width: 40px;
+  height: 40px;
+}
+
+.fixed.md {
+  width: 80px;
+  height: 80px;
+}
+
+.fixed.lg {
+  width: 120px;
+  height: 120px;
+}

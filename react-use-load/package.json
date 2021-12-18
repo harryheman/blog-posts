@@ -1,0 +1,13 @@
+{
+  "name": "react-use-load",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "concurrently": "^6.3.0"
+  },
+  "scripts": {
+    "start": "concurrently \"yarn --cwd server dev\" \"yarn --cwd client start\""
+  }
+}

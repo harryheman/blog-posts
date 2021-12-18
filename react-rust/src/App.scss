@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
+
+$primary: #0275d8;
+$light: #f7f7f7;
+$dark: #292b2c;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat';
+  font-size: 1rem;
+  color: $dark;
+}
+
+@mixin flex-center($column: false) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @if $column {
+    & {
+      flex-direction: column;
+    }
+  }
+}
+
+@mixin shadow($opacity: 0.4) {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, $opacity);
+}
+
+.app {
+  min-height: 100vh;
+  @include flex-center(true);
+  text-align: center;
+
+  h1 {
+    margin: 1rem 0;
+    font-size: 2rem;
+  }
+
+  form {
+    padding: 1.5rem;
+    background-color: $light;
+    border-radius: 4px;
+    @include shadow;
+
+    fieldset {
+      border: none;
+
+      input {
+        margin-left: 0.5rem;
+        padding: 0.25rem;
+      }
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      border: none;
+      outline: none;
+      border-radius: 4px;
+      background: $primary;
+      color: $light;
+      @include shadow(0.6);
+      cursor: pointer;
+
+      &:active {
+        box-shadow: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+export default [
+  {
+    id: '1',
+    text: 'Eat',
+    done: true,
+    edit: false
+  },
+  {
+    id: '2',
+    text: 'Code',
+    done: true,
+    edit: false
+  },
+  {
+    id: '3',
+    text: 'Sleep',
+    done: false,
+    edit: false
+  },
+  {
+    id: '4',
+    text: 'Repeat',
+    done: false,
+    edit: false
+  }
+]

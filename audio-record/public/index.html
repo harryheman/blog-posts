@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Record App</title>
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header>
+      <h1>Record App</h1>
+    </header>
+    <main>
+      <button class="btn" id="record_btn">
+        <img src="img/microphone.png" alt="record" id="record_img" />
+      </button>
+      <section>
+        <h2>My Records</h2>
+        <div id="records_box"></div>
+      </section>
+      <section id="record_box">
+        <h2>My Record</h2>
+        <div id="audio_box"></div>
+        <div class="action_box">
+          <button class="btn btn_success" id="save_btn">Save</button>
+          <button class="btn btn_danger" id="remove_btn">Remove</button>
+        </div>
+      </section>
+    </main>
+    <footer>&copy;&nbsp;</footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>

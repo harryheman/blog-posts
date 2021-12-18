@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,200;0,400;1,600&display=swap');
+
+$primary: #0275d8;
+$danger: #d9534f;
+$success: #5cb85c;
+$light: #f7f7f7;
+$dark: #292b2c;
+
+@mixin flex-center($column: false) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @if $column {
+    & {
+      flex-direction: column;
+    }
+  }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: $dark;
+}
+
+#root {
+  min-height: 100vh;
+  @include flex-center(true);
+  text-align: center;
+
+  header {
+    position: fixed;
+    top: 1rem;
+
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  button {
+    margin-bottom: 1rem;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    background-color: $primary;
+    color: $light;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+    user-select: none;
+
+    &:active {
+      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.6);
+    }
+
+    &.wrong-message {
+      background-color: $danger;
+    }
+
+    &.right-message {
+      background-color: $success;
+    }
+  }
+
+  .error-message {
+    margin-top: 1rem;
+    color: $danger;
+    font-weight: bold;
+  }
+
+  .message-container {
+    h2 {
+      margin: 1rem 0;
+      font-size: 1.4rem;
+      color: $success;
+    }
+
+    p {
+      font-weight: bold;
+    }
+  }
+
+  footer {
+    position: fixed;
+    bottom: 1rem;
+  }
+}

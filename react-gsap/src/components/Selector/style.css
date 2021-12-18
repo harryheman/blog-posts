@@ -1,0 +1,53 @@
+.selector {
+  width: 35ch;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 1;
+}
+
+.selector label {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.selector button {
+  padding: 0.5rem 1rem;
+  background-color: var(--light);
+  border: none;
+  border-radius: 2px;
+  color: var(--dark);
+  cursor: pointer;
+  user-select: none;
+}
+
+.selector.open button {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.selector ul {
+  list-style: none;
+  background-color: var(--light);
+  border-bottom-left-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.selector.open ul {
+  padding-bottom: 0.25rem;
+}
+
+.selector li {
+  padding: 0.25rem;
+  color: var(--dark);
+  cursor: pointer;
+  user-select: none;
+}
+
+.selector li.selected {
+  background-color: var(--dark);
+  color: var(--light);
+}

@@ -1,0 +1,11 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  max-width: 768px !important;
+}
+
+summary {
+  user-select: none;
+}

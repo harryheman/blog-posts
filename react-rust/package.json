@@ -1,0 +1,19 @@
+{
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "wasm": "cargo build --target wasm32-unknown-unknown"
+  },
+  "dependencies": {
+    "@snowpack/plugin-sass": "^1.4.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "@emily-curry/snowpack-plugin-wasm-pack": "^1.1.4",
+    "@snowpack/plugin-dotenv": "^2.1.0",
+    "@snowpack/plugin-react-refresh": "^2.5.0",
+    "prettier": "^2.2.1",
+    "snowpack": "^3.3.7"
+  }
+}

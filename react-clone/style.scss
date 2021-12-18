@@ -1,0 +1,93 @@
+// Google font
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+// Bootstrap colors
+$primary: #0275d8;
+$success: #5cb85c;
+$danger: #d9534f;
+$light: #f7f7f7;
+$dark: #292b2c;
+
+@mixin reset($font-family, $font-size, $color) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  @if $font-family {
+    font-family: $font-family;
+  }
+  @if $font-size {
+    font-size: $font-size;
+  }
+  @if $color {
+    color: $color;
+  }
+}
+
+*,
+*::before,
+*::after {
+  @include reset('Montserrat', 1rem, $dark);
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  min-height: 100vh;
+  @include flex-center;
+  background-color: $dark;
+}
+
+#app {
+  padding: 2rem;
+  background-color: $light;
+  border-radius: 4px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+  text-align: center;
+
+  .title {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+  }
+
+  .subtitle {
+    margin-top: 0.5rem;
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+    color: $danger;
+
+    .count-value {
+      font-size: 1.3rem;
+      font-weight: bold;
+      color: $primary;
+    }
+  }
+
+  .box {
+    margin: 1rem;
+
+    & > * {
+      font-size: 1.1rem;
+    }
+
+    button {
+      text-transform: uppercase;
+    }
+  }
+
+  .list {
+    list-style: none;
+
+    li {
+      color: $success;
+    }
+
+    li + li {
+      margin-top: 0.25rem;
+      font-style: italic;
+    }
+  }
+}

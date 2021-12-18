@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "outDir": "./build",
+    "rootDir": "./src",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es2019"
+  },
+  "references": [
+    {
+      "path": "../shared"
+    }
+  ]
+}

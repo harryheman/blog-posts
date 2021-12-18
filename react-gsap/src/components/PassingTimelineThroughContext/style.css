@@ -1,0 +1,16 @@
+.menu {
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+.menu-item:not(:last-of-type) {
+  margin-right: 1rem;
+}
+
+.menu-item > * {
+  cursor: pointer;
+}
+
+.menu-item input {
+  margin-right: 0.25rem;
+}

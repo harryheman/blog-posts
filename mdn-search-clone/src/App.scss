@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+$margin: 0.75rem 0;
+$dark: #282c34;
+$light: #f7f7f7;
+$primary: #0275d8;
+$success: #5cb85c;
+$danger: #d9534f;
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// reset
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: $light;
+}
+
+#root {
+  min-height: 100vh;
+  @include flex-center;
+  align-items: flex-start;
+  background-color: $dark;
+}
+
+.search-form {
+  @include flex-center;
+  flex-direction: column;
+
+  .search-field {
+    position: relative;
+  }
+
+  .search-input-field {
+    width: 400px;
+    margin: $margin;
+    padding: 0.25rem 0.5rem;
+    padding-right: 1.75rem;
+    border: none;
+    border-radius: 2px;
+    color: $dark;
+    text-align: center;
+
+    @media (max-width: 425px) {
+      width: 300px;
+    }
+
+    &:focus-visible {
+      outline: none;
+    }
+  }
+
+  .search-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
+    width: 20px;
+    height: 20px;
+    background: none;
+    background-image: url('./assets/search.png');
+    background-size: 100%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+
+  .search-results {
+    .result-item {
+      margin: $margin;
+      cursor: pointer;
+
+      mark {
+        background-color: $success;
+        color: $dark;
+      }
+    }
+  }
+
+  .search-item-uri {
+    font-size: 0.8rem;
+  }
+
+  .nothing-found {
+    text-align: center;
+
+    a {
+      text-decoration: none;
+      border-bottom: 1px dashed $light;
+    }
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -10;
+}
+
+// placeholder
+::-webkit-input-placeholder {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+::-moz-placeholder {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+:-moz-placeholder {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+:-ms-input-placeholder {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}

@@ -1,0 +1,26 @@
+{
+  "name": "express-mongo-auth-server-template",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@sentry/node": "^6.14.3",
+    "@sentry/tracing": "^6.14.3",
+    "argon2": "^0.28.2",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.2",
+    "nodemon": "^2.0.15"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "start": "cross-env NODE_ENV=production node index.js",
+    "gen": "node utils/generateKeyPair.js"
+  }
+}

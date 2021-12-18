@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-content: center;
+  text-align: center;
+}
+
+h1 {
+  margin: 0.5em 0;
+  text-transform: uppercase;
+  font-size: 3rem;
+}
+
+p {
+  font-size: 1.15rem;
+}
+
+.buttons {
+  margin: 0.5em 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5em;
+}
+
+button {
+  cursor: pointer;
+}
+
+pre {
+  margin: 0.5em 0;
+  white-space: pre-wrap;
+  text-align: left;
+}

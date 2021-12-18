@@ -1,0 +1,19 @@
+{
+  "name": "clear-site-data",
+  "version": "1.0.0",
+  "main": "server.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "idb": "^6.1.2",
+    "nodemon": "^2.0.12",
+    "open-cli": "^7.0.0",
+    "very-simple-fetch": "^0.1.7"
+  },
+  "scripts": {
+    "dev": "open-cli http://localhost:3000 && nodemon server.js",
+    "start": "node server.js"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "screen-record",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "concurrently": "^6.4.0"
+  },
+  "scripts": {
+    "server": "yarn --cwd server dev",
+    "client": "yarn --cwd client start",
+    "start": "concurrently \"yarn server\" \"yarn client\""
+  }
+}
