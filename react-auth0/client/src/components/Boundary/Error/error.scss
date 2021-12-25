@@ -1,0 +1,34 @@
+@import 'App.scss';
+
+.error {
+  background-color: $light;
+  border-radius: 2px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  padding: 1.25rem;
+
+  h2 {
+    color: $danger;
+  }
+
+  p {
+    margin: 0.5rem 0;
+    font-weight: bold;
+
+    span {
+      color: $primary;
+      border-bottom: 1px dashed $primary;
+      font-weight: normal;
+    }
+  }
+
+  pre {
+    color: $warning;
+    font-family: system-ui;
+    font-size: 0.9rem;
+  }
+
+  div {
+    margin-top: 1rem;
+    @include flex-center;
+  }
+}

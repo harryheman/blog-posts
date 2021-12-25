@@ -1,6 +1,6 @@
 # `Node.js`: документирование и визуализация `API` с помощью `Swagger`
 
-В этой небольшой заметке я расскажу вам о том, как генерировать и визуализировать документацию к `API` с помощью [`Swagger`](https://swagger.io/).
+Let's generate and visualize `API` using [`Swagger`](https://swagger.io/).
 
 Мы разработаем простой [`Express-сервер`](https://expressjs.com/), способный обрабатывать стандартные [`CRUD-запросы`](https://ru.wikipedia.org/wiki/CRUD), с фиктивной базой данных, реализованной с помощью [`lowdb`](https://github.com/typicode/lowdb).
 

@@ -1,6 +1,8 @@
 # `React Clone` :metal:
 
-В данном туториале мы разработаем мини-версию `React`, которая сможет выполнять следующий код:
+Let's build React Clone.
+
+Наша мини-версия `React` сможет выполнять следующий код:
 
 ```javascript
 import '../style.scss'

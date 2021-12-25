@@ -1,0 +1,12 @@
+@import 'App.scss';
+
+.message {
+  h2 {
+    &.public {
+      color: $primary;
+    }
+    &.protected {
+      color: $success;
+    }
+  }
+}

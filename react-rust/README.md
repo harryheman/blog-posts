@@ -1,5 +1,7 @@
 # `React + Rust` :metal:
 
+Let's use `Wasm` module, compiled from `Rust`, in `React`.
+
 На днях прочитал [интересную статью](https://www.joshfinnie.com/blog/using-webassembly-created-in-rust-for-fast-react-components/), в которой демонстрируется возможность использования [`WebAssembly-модулей`](https://developer.mozilla.org/ru/docs/WebAssembly) (далее - `Wasm`), скомпилированных из [`Rust`](https://www.rust-lang.org), в [`React-приложении`](https://ru.reactjs.org/).
 
 Так вот, статья интересная, но автор толком ничего не объясняет, видимо, исходя из предположения, что читатели, как и он, владеют обоими языками программирования (`JavaScript` и `Rust`).

@@ -343,5 +343,3 @@ function fibJS(n) {
 
 - [webm-wasm](https://github.com/GoogleChromeLabs/webm-wasm) - инструмент для создания видео в формате `WebM` с помощью `JS` через `WA`
 - [wasm-pdf](https://github.com/jussiniinikoski/wasm-pdf) - инструмент (пример) генерации `PDF-файлов` в браузере с помощью `JS` и `WA`
-
-The End.

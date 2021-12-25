@@ -1,6 +1,6 @@
 # `React + Express + TypeScript` Template :metal:
 
-В этой заметке я покажу вам, как создать шаблон [`React.js`](https://ru.reactjs.org/) + [`Express.js`](https://expressjs.com/ru/) + [`TypeScript`](https://www.typescriptlang.org/) приложения.
+Let's build [`React.js`](https://ru.reactjs.org/) + [`Express.js`](https://expressjs.com/ru/) + [`TypeScript`](https://www.typescriptlang.org/) app template/boilerplate.
 
 Обоснование используемых технологий (сугубо личное мнение, которое не обязательно должно совпадать с вашим):
 

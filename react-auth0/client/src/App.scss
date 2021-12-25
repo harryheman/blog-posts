@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+@import './styles/variables';
+@import './styles/mixins';
+
+*,
+*::before,
+*::after {
+  @include reset('Montserrat', 1rem, $dark);
+}
+
+html {
+  @include fluid-type($min_width, $max_width, $min_font, $max_font);
+}
+
+.app {
+  min-height: 100vh;
+  @include flex-center(true);
+}
+
+nav {
+  padding: 0.5rem 0;
+  @include flex-center;
+
+  ul {
+    list-style: none;
+    @include flex-center;
+
+    li + li {
+      margin-left: 1rem;
+    }
+
+    li {
+      a {
+        color: $primary;
+        cursor: pointer;
+        font-size: 0.9rem;
+        text-decoration: none;
+        transition: 0.2s;
+
+        &:hover {
+          filter: brightness(60%);
+        }
+      }
+    }
+  }
+}
+
+main {
+  flex-grow: 1;
+  @include flex-center(true);
+
+  h1 {
+    font-size: 1.6rem;
+    margin: 1rem 0;
+    text-align: center;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+    text-align: center;
+  }
+}
+
+footer {
+  margin-bottom: 0.5rem;
+  p {
+    font-size: 0.8rem;
+  }
+}
+
+button {
+  background-color: $primary;
+  border-radius: 4px;
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  color: $light;
+  cursor: pointer;
+  font-size: 0.8rem;
+  outline: none;
+  padding: 0.5rem 0.75rem;
+  user-select: none;
+
+  &.auth {
+    position: fixed;
+    right: 0.5rem;
+
+    &.login {
+      background-color: $success;
+    }
+
+    &.logout {
+      background-color: $danger;
+    }
+  }
+}

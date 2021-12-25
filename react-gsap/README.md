@@ -1,5 +1,7 @@
 # `React + GSAP` Examples :metal:
 
+Let's build some animations with `GSAP`.
+
 [Песочница](https://codesandbox.io/s/react-gsap-p2ntz)
 
 __Что такое `GSAP`?__

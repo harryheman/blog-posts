@@ -2,7 +2,7 @@
 
 > Hooks -> client/src/hooks
 
-В данном туториале мы разработаем хук для загрузки дополнительных данных.
+Let's build custom `React` hook for uploading additional data.
 
 На самом деле хука будет 2:
 
