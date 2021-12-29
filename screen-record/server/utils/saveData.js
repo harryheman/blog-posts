@@ -23,7 +23,9 @@ export const saveData = async (data, username) => {
   try {
     fileHandle = await open(dirPath)
   } catch {
-    await mkdir(dirPath)
+    await mkdir(dirPath, {
+      recursive: true,
+    })
   } finally {
     if (fileHandle) {
       fileHandle.close()
