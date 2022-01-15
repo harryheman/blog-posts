@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
+
+:root {
+  --primary: #0275d8;
+  --success: #5cb85c;
+  --warning: #f0ad4e;
+  --danger: #d9534f;
+  --light: #f7f7f7;
+  --dark: #292b2c;
+}
+
+html {
+  font-size: 16px;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: var(--dark);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1,
+h2 {
+  margin: 0.75rem 0;
+  text-align: center;
+}
+
+h1 {
+  font-size: 1.4rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+.todo-form {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.todo-form label {
+  margin: 0.5rem 0;
+  display: block;
+}
+
+.todo-info {
+  margin: 1rem;
+}
+
+.todo-form input {
+  padding: 0.25rem;
+  border: none;
+  border-bottom: 1px solid var(--primary);
+  outline: none;
+}
+
+.todo-info span {
+  margin: 0 0.25rem;
+  display: inline-block;
+  font-size: 0.9rem;
+}
+
+.todo-list {
+  list-style: none;
+}
+
+.todo-item {
+  margin: 0.25rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo-item input {
+  width: 1rem;
+  height: 1rem;
+  cursor: pointer;
+}
+
+.todo-item span {
+  margin: 0 0.5rem;
+  flex-grow: 1;
+}
+
+.todo-text {
+  max-width: 10rem;
+  word-wrap: break-word;
+}
+
+.todo-controls {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.todo-controls button {
+  margin: 0.15rem 0;
+}
+
+button {
+  padding: 0.25rem 0.75rem;
+  background-color: var(--primary);
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  color: var(--light);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s;
+}
+
+button:active {
+  box-shadow: none;
+}
+
+button:disabled {
+  opacity: 0.5;
+  filter: grayscale(100%);
+  cursor: not-allowed;
+}
+
+.btn-add,
+.btn-save {
+  background-color: var(--success);
+}
+
+.btn-remove {
+  background-color: var(--danger);
+}
+
+.btn-create {
+  background-color: var(--light);
+  color: var(--dark);
+  filter: brightness(95%);
+}
+
+.btn-update {
+  background-color: var(--dark);
+}
+
+footer p {
+  margin: 0.5rem 0;
+  font-size: 0.8rem;
+}
+
+.error-box {
+  padding: 1rem;
+  background-color: var(--light);
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.error-box h2 {
+  margin: 0.5rem 0;
+  color: var(--danger);
+}
+
+.error-box p {
+  margin: 0.25rem 0;
+  font-size: 0.9rem;
+}

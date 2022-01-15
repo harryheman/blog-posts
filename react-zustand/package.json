@@ -1,0 +1,26 @@
+{
+  "scripts": {
+    "start": "snowpack dev",
+    "build": "snowpack build",
+    "server": "json-server -w db.json -d 1000"
+  },
+  "dependencies": {
+    "gsap": "^3.9.1",
+    "json-server": "^0.17.0",
+    "nanoid": "^3.1.30",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-loader-spinner": "^5.0.6",
+    "zustand": "^3.6.9"
+  },
+  "devDependencies": {
+    "@snowpack/plugin-dotenv": "^2.1.0",
+    "@snowpack/plugin-react-refresh": "^2.5.0",
+    "@snowpack/web-test-runner-plugin": "^0.2.2",
+    "@testing-library/react": "^11.2.6",
+    "@web/test-runner": "^0.13.3",
+    "chai": "^4.3.4",
+    "prettier": "^2.2.1",
+    "snowpack": "^3.3.7"
+  }
+}
