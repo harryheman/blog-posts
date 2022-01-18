@@ -1,0 +1,122 @@
+$primary: #0275d8;
+$success: #5cb85c;
+$warning: #f0ad4e;
+$danger: #d9534f;
+$light: #f7f7f7;
+$dark: #292b2c;
+
+@mixin reset($font-family, $font-size, $color) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  @if $font-family {
+    font-family: $font-family;
+  }
+  @if $font-size {
+    font-size: $font-size;
+  }
+  @if $color {
+    color: $color;
+  }
+}
+
+@mixin flex-center($column: false) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @if $column {
+    & {
+      flex-direction: column;
+    }
+  }
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
+
+*,
+*::before,
+*::after {
+  @include reset('Montserrat', 1rem, $dark);
+}
+
+.selector {
+  margin: 0.5rem;
+
+  label {
+    display: block;
+    margin: 0.25rem 0;
+  }
+}
+
+.container {
+  margin: 0.25rem;
+  @include flex-center(true);
+
+  &.common,
+  &.recorder {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  &.result {
+    margin: 1rem 0;
+
+    a {
+      margin-top: 0.5rem;
+      text-decoration: none;
+      color: $primary;
+      border-bottom: 1px dashed $primary;
+    }
+  }
+
+  h2 {
+    font-size: 1.4rem;
+    margin: 0.25rem 0;
+  }
+}
+
+.item {
+  @include flex-center();
+
+  input {
+    margin-right: 0.5rem;
+    cursor: pointer;
+  }
+}
+
+.recorder {
+  button {
+    margin: 0 0.15rem;
+    padding: 0.5rem 1rem;
+    background-color: $primary;
+    color: $light;
+    border: none;
+    outline: none;
+    border-radius: 2px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    user-select: none;
+
+    &.pause {
+      background-color: $warning;
+    }
+
+    &.resume {
+      background-color: $success;
+    }
+
+    &.stop {
+      background-color: $danger;
+    }
+  }
+}
+
+video {
+  max-width: 320px;
+  border-radius: 4px;
+}
+
+audio {
+  margin: 0.25rem 0;
+}
