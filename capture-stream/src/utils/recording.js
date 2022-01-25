@@ -11,8 +11,10 @@ export const startRecording = ({ audio, video, timeslice = 250 }) => {
   if (unsupportedFeatures.length)
     return console.error(`${unsupportedFeatures.join(', ')} not supported`)
 
-  const videoStream = video.captureStream()
-  const audioStream = audio.captureStream()
+  const videoStream =
+    (video.captureStream && video.captureStream()) || video.mozCaptureStream()
+  const audioStream =
+    (audio.captureStream && audio.captureStream()) || audio.mozCaptureStream()
 
   audioContext = new AudioContext()
   mediaStreamAudioDestinationNode = new MediaStreamAudioDestinationNode(

@@ -2,8 +2,8 @@ export default function verifySupport() {
   const unsupportedFeatures = []
 
   if (
-    !('captureStream' in HTMLAudioElement.prototype) ||
-    !('captureStream' in HTMLVideoElement.prototype)
+    !('captureStream' in HTMLAudioElement.prototype) &&
+    !('mozCaptureStream' in HTMLAudioElement.prototype)
   ) {
     unsupportedFeatures.push('captureStream()')
   }
