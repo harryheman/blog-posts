@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css" />
+    <title>Image Capture</title>
+  </head>
+  <body>
+    <!-- индикатор загрузки -->
+    <div class="lds-roller">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <!-- приложение -->
+    <div id="app">
+      <div>
+        <video autoplay muted></video>
+        <!-- результат -->
+        <div class="result">
+          <img />
+          <a class="photo-link">Download</a>
+          <canvas width="0" height="0"></canvas>
+          <a class="canvas-link">Download</a>
+        </div>
+      </div>
+      <!-- настройки -->
+      <form class="settings">
+        <!-- кнопки -->
+        <div class="controls">
+          <button class="take-photo">Take photo</button>
+          <button class="grab-frame" type="button">Grab frame</button>
+          <button class="remove-photo" type="button" disabled>
+            Remove photo
+          </button>
+          <button class="clear-canvas" type="button" disabled>
+            Clear canvas
+          </button>
+        </div>
+      </form>
+    </div>
+    <!-- скрипты -->
+    <script src="scripts/globals.js"></script>
+    <script type="module" src="scripts/main.js"></script>
+  </body>
+</html>

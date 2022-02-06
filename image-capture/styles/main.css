@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
+@import './loader.css';
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Monserrat', sans-serif;
+  font-size: 1rem;
+  color: #292b2c;
+}
+
+:root {
+  --primary: #0275d8;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+}
+
+#app {
+  padding: 1rem;
+  display: none;
+}
+
+video,
+img,
+canvas {
+  max-width: 320px;
+  border-radius: 4px;
+}
+
+.settings {
+  padding: 0 1rem;
+}
+
+.field {
+  margin-bottom: 0.75rem;
+  flex-grow: 1;
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 1rem;
+}
+
+.controls {
+  margin-bottom: 1rem;
+  display: flex;
+}
+
+button {
+  padding: 0.3rem 0.5rem;
+  background: var(--primary);
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  color: #f7f7f7;
+  font-size: 0.88rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  transition: 0.3s;
+  cursor: pointer;
+  user-select: none;
+}
+
+button:active {
+  box-shadow: none;
+}
+
+button[disabled] {
+  filter: grayscale(50);
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+a {
+  margin: 0.5rem 0;
+  text-decoration: none;
+  font-size: 0.8rem;
+  display: none;
+}
+
+a[href] {
+  color: var(--primary);
+  border-bottom: 1px dashed var(--primary);
+}
