@@ -9,7 +9,6 @@ const defaultConstraints = {
 async function getMedia(constraints = defaultConstraints) {
   try {
     const stream = await navigator.mediaDevices.getUserMedia(constraints)
-    console.log(navigator.mediaDevices.getSupportedConstraints())
     video$.srcObject = stream
     videoTrack = stream.getVideoTracks()[0]
     imageCapture = new ImageCapture(videoTrack)
