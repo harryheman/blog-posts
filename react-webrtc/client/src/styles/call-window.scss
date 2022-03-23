@@ -1,0 +1,35 @@
+.call-window {
+  @include fixed;
+
+  .inner {
+    @include flex-center(true);
+
+    .video {
+      video {
+        border-radius: 4px;
+      }
+
+      .remote {
+        width: 100%;
+        max-height: 90vh;
+      }
+
+      .local {
+        position: absolute;
+        width: 25vw;
+        cursor: pointer;
+
+        &.dragging {
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+          cursor: move;
+        }
+      }
+    }
+
+    .control {
+      @include flex-center;
+      position: absolute;
+      bottom: 5%;
+    }
+  }
+}

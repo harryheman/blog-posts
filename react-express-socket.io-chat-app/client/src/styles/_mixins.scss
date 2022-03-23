@@ -1,0 +1,26 @@
+@mixin reset($font-family, $font-size, $color) {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  @if $font-family {
+    font-family: $font-family;
+  }
+  @if $font-size {
+    font-size: $font-size;
+  }
+  @if $color {
+    color: $color;
+  }
+}
+
+@mixin flex-center($column: false) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @if $column {
+    & {
+      flex-direction: column;
+    }
+  }
+}

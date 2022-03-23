@@ -1,0 +1,91 @@
+@import './variables';
+@import './mixins';
+@import './main-window';
+@import './call-modal';
+@import './call-window';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
+
+*,
+*::before,
+*::after {
+  @include reset('Montserrat', 1rem, $dark);
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0.95);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.app {
+  min-height: 100vh;
+  background: #12c2e9; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to right,
+    #f64f59,
+    #c471ed,
+    #12c2e9
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to right,
+    #f64f59,
+    #c471ed,
+    #12c2e9
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  @include flex-center(true);
+
+  h1 {
+    position: absolute;
+    top: 5%;
+    font-size: 1.6rem;
+  }
+
+  button {
+    @include flex-center;
+    margin: 0.5rem;
+    padding: 0.75rem;
+    background: $primary;
+    border: none;
+    outline: none;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    transition: 0.2s;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      background: $success;
+    }
+
+    &:active {
+      box-shadow: none;
+    }
+
+    &.reject {
+      background-color: $danger;
+    }
+
+    svg {
+      fill: $light;
+    }
+  }
+
+  .calling {
+    @include fixed;
+
+    button {
+      padding: 1.4rem;
+      background-color: $success;
+      animation: scale 0.6s linear infinite alternate;
+      cursor: none;
+
+      svg {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}

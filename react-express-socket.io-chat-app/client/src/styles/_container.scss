@@ -1,0 +1,62 @@
+.container {
+  &.chat {
+    height: 98vh;
+    @include flex-center;
+  }
+
+  &.message {
+    @include flex-center(true);
+    height: 100%;
+    width: 340px;
+  }
+
+  &.user {
+    padding: 0.5rem;
+    align-self: flex-start;
+  }
+
+  &.emoji {
+    .emoji-mart {
+      position: absolute;
+      z-index: 2;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      button {
+        background: none;
+      }
+    }
+
+    .emoji-mart-bar {
+      display: none;
+    }
+  }
+
+  &.preview {
+    position: absolute;
+    z-index: 2;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    img,
+    audio,
+    video {
+      max-width: 200px;
+    }
+  }
+
+  &.recorder {
+    .overlay {
+      @include flex-center;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+  }
+}

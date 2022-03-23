@@ -1,0 +1,17 @@
+.App {
+  padding: 1rem;
+}
+
+h1 {
+  text-align: center;
+}
+
+.images {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}

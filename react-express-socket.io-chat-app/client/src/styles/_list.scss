@@ -1,0 +1,31 @@
+.list {
+  position: relative;
+  height: 90%;
+
+  &.message {
+    @include flex-center(true);
+    padding: 0.25rem;
+    width: 100%;
+    justify-content: start;
+    overflow-y: scroll;
+
+    .log {
+      padding: 0.5rem;
+      width: max-content;
+      position: fixed;
+      top: 1rem;
+      background-color: $dark;
+      color: $light;
+      font-size: 0.9rem;
+      border-radius: 4px;
+      transition: 0.3s;
+      user-select: none;
+      opacity: 0;
+    }
+  }
+
+  &.user {
+    list-style: none;
+    align-self: flex-start;
+  }
+}

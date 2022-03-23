@@ -1,0 +1,40 @@
+.modal {
+  padding: 0.75rem;
+  max-width: 320px;
+  background-color: $light;
+  border-radius: 4px;
+
+  & > * {
+    margin: 0.75rem;
+  }
+
+  div {
+    @include flex-center(true);
+  }
+
+  p {
+    text-align: center;
+  }
+
+  .controls {
+    flex-direction: row;
+
+    .play {
+      background-color: $success;
+    }
+
+    .stop {
+      background-color: $danger;
+    }
+  }
+
+  select {
+    text-align: center;
+    font-size: 0.9rem;
+  }
+
+  video {
+    display: none;
+    max-width: 90%;
+  }
+}

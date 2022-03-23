@@ -1,0 +1,67 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
+
+@import './styles/variables';
+@import './styles/mixins';
+@import './styles/container';
+@import './styles/list';
+@import './styles/item';
+@import './styles/form';
+@import './styles/btnicon';
+@import './styles/modal';
+
+*,
+*::before,
+*::after {
+  @include reset('Montserrat', 1rem, $dark);
+}
+
+body {
+  @include flex-center;
+  background-color: $light;
+}
+
+h2 {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+img,
+video {
+  border-radius: 4px;
+}
+
+audio {
+  &:focus-visible {
+    outline: none;
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  z-index: -100;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  user-select: none;
+  pointer-events: none;
+  cursor: none;
+  overflow: hidden;
+  border: none;
+  outline: none;
+  white-space: nowrap;
+}
+
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: $light;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: $primary;
+  border-radius: 2px;
+}

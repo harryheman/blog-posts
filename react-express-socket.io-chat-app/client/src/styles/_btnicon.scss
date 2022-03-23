@@ -1,0 +1,49 @@
+.btn {
+  @include flex-center;
+  padding: 0.1rem 0.25rem;
+  background: none;
+  border: none;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+  user-select: none;
+
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  &.close {
+    position: absolute;
+    top: -4px;
+    left: -4px;
+    background: $primary;
+    border-radius: 50%;
+  }
+}
+
+.icon {
+  path,
+  line,
+  polygon {
+    color: $light;
+  }
+
+  &.remove {
+    path {
+      color: $danger;
+    }
+  }
+
+  &.speak {
+    path {
+      color: $success;
+    }
+  }
+
+  &.user {
+    path {
+      color: $dark;
+    }
+  }
+}

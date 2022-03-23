@@ -1,0 +1,56 @@
+.main-window {
+  @include flex-center(true);
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 2rem 4rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+  text-align: center;
+
+  .local-id {
+    @include flex-center(true);
+    margin-bottom: 2rem;
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+
+      & + p {
+        font-size: 1.2rem;
+        border-bottom: 1px dashed $dark;
+
+        &::selection {
+          background-color: rgba(0, 0, 0, 0.4);
+          color: $light;
+        }
+      }
+    }
+  }
+
+  .remote-id {
+    @include flex-center(true);
+
+    label {
+      font-size: 1.2rem;
+    }
+
+    input {
+      margin: 0.5rem 0;
+      padding: 0.25rem;
+      background: none;
+      border: none;
+      outline: none;
+      text-align: center;
+      border-bottom: 1px solid $dark;
+    }
+
+    .error {
+      margin: 0.25rem 0;
+      color: $danger;
+    }
+  }
+
+  .control {
+    margin-top: 1rem;
+    @include flex-center;
+  }
+}

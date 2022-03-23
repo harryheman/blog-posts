@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  imgproxy:
+    image: darthsim/imgproxy:v3.3.0
+    env_file:
+      - .env
+    container_name: ${APP_NAME}_imgproxy
+    ports:
+      - 8080:8080
+    volumes:
+      - ./media:/media
+    restart: on-failure
+  client:
+    env_file:
+      - .env
+    container_name: ${APP_NAME}_client
+    build: client
+    ports:
+      - 3000:3000
+    restart: on-failure

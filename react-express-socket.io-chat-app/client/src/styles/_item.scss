@@ -1,0 +1,58 @@
+.item {
+  @include flex-center(true);
+  align-self: flex-end;
+
+  &.user {
+    margin: 0.25rem 0;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  &.message {
+    margin: 0.5rem 0;
+    padding: 0.5rem 0.75rem;
+    max-width: calc(380px / 2);
+    background-color: $dark;
+    border-radius: 8px;
+
+    .inner {
+      @include flex-center;
+      justify-content: space-between;
+      width: 100%;
+      margin-top: 0.1rem;
+
+      img,
+      audio,
+      video {
+        max-width: 90%;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  p {
+    align-self: flex-end;
+    color: $light;
+    word-break: break-all;
+
+    time {
+      color: $light;
+      font-size: 0.7rem;
+      opacity: 0.7;
+    }
+
+    &.username {
+      font-size: 0.9rem;
+      color: $primary;
+      user-select: none;
+    }
+  }
+
+  &.my {
+    align-self: flex-start;
+
+    p {
+      align-self: flex-start;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+.form {
+  @include flex-center;
+
+  label {
+    margin: 0.25rem 0;
+  }
+
+  input {
+    height: 30px;
+    padding: 0.25rem;
+    border: 1px solid $primary;
+    border-radius: 2px;
+    outline: none;
+
+    &:disabled {
+      background-color: $light;
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+  }
+
+  .btn {
+    height: 30px;
+    width: 30px;
+    background-color: $primary;
+
+    &.close {
+      width: 20px;
+      height: 20px;
+    }
+
+    &.chat {
+      margin-top: 1rem;
+      padding: 0.25rem 0.5rem;
+      width: max-content;
+      color: $light;
+    }
+  }
+
+  &.name-room {
+    flex-direction: column;
+
+    div {
+      @include flex-center(true);
+    }
+  }
+
+  &.message {
+    position: relative;
+  }
+}

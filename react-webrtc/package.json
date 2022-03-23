@@ -1,0 +1,17 @@
+{
+  "name": "react-webrtc",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/harryheman/react-webrtc.git",
+  "author": "Igor Agapov <aio350@jetstyle.ru>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  },
+  "scripts": {
+    "dev": "concurrently \"yarn --cwd server dev\" \"yarn --cwd client dev\"",
+    "build": "cd client && yarn && yarn build",
+    "start": "cd server && yarn && node index.js"
+  }
+}

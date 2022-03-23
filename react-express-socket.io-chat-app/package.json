@@ -1,0 +1,17 @@
+{
+  "name": "react-express-socket.io-chat-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/harryheman/chat-app.git",
+  "author": "Igor Agapov <aio350@yahoo.com>",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  },
+  "scripts": {
+    "dev:client": "yarn --cwd client start",
+    "dev:server": "yarn --cwd server dev",
+    "dev": "concurrently \"yarn dev:client\" \"yarn dev:server\""
+  }
+}
