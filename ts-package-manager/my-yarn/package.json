@@ -1,0 +1,17 @@
+{
+  "name": "my-yarn",
+  "version": "1.0.0",
+  "description": "MyYarn use case",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node_modules/nodemon/bin/nodemon.js"
+  },
+  "license": "MIT",
+  "type": "module",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
