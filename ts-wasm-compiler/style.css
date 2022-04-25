@@ -1,0 +1,27 @@
+h1 {
+  margin: 1rem 0;
+  text-align: center;
+}
+canvas {
+  display: block;
+  border: 1px solid gray;
+}
+nav .btn {
+  margin-right: 10px;
+}
+textarea {
+  font-family: monospace;
+}
+.CodeMirror,
+textarea {
+  height: 400px !important;
+}
+.error {
+  border-color: red;
+  border-style: dotted;
+  border-width: 2px;
+}
+.container-fluid,
+.navbar {
+  margin-bottom: 50px;
+}

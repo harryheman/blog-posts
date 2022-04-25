@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
+
+:root {
+  --primary: #0275d8;
+  --success: #5cb85c;
+  --warning: #f0ad4e;
+  --danger: #d9534f;
+  --light: #f7f7f7;
+  --dark: #292b2c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+}
+
+body.light {
+  background-color: var(--light);
+  color: var(--dark);
+}
+
+body.dark {
+  background-color: var(--dark);
+  color: var(--light);
+}
+
+#root {
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h1,
+h2 {
+  margin: 1rem 0;
+}
+
+h1 {
+  font-size: 1.6rem;
+}
+
+h2 {
+  font-size: 1.4rem;
+}
+
+h3 {
+  font-size: 1.2rem;
+}
+
+label {
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+form {
+  margin: 1rem 0;
+}
+
+form input {
+  padding: 0.5rem;
+  max-width: 220px;
+  width: max-content;
+  outline: none;
+  border: 1px solid var(--dark);
+  border-radius: 4px;
+  text-align: center;
+}
+
+form input:focus {
+  border-color: var(--primary);
+}
+
+ul {
+  list-style: none;
+}
+
+li {
+  margin: 0.75rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+li input {
+  width: 18px;
+  height: 18px;
+}
+
+li span {
+  display: block;
+  width: 120px;
+  word-break: break-all;
+}
+
+button {
+  padding: 0.5rem 1rem;
+  background: none;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  background-color: var(--danger);
+  color: var(--light);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
+  user-select: none;
+  transition: 0.2s;
+}
+
+button:active {
+  box-shadow: none;
+}
+
+button.add {
+  background-color: var(--success);
+}
+
+.error {
+  color: var(--danger);
+}
+
+.App {
+  text-align: center;
+}

@@ -1,4 +1,4 @@
-# `React + Express` Screen Recording App :metal:
+# React + Express Screen Recording App :metal:
 
 Let's build screen recording app.
 

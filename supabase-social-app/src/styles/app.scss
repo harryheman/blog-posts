@@ -1,0 +1,267 @@
+@import './variables';
+@import './mixins';
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400;600&display=swap');
+
+*,
+*::before,
+*::after {
+  @include reset('Montserrat', 1rem, $dark);
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.app {
+  @include flex-center(true);
+  min-height: 100vh;
+
+  main {
+    flex-grow: 1;
+  }
+}
+
+.page {
+  @include flex-center(true);
+  animation: show 0.3s linear;
+}
+
+nav {
+  padding: 0.25rem 0;
+
+  ul {
+    min-height: calc(55px + 0.5rem);
+    @include flex-center;
+    gap: 1rem;
+    list-style: none;
+  }
+
+  &.post-tabs {
+    ul {
+      min-height: auto;
+    }
+
+    button {
+      background: $light;
+      color: $dark;
+
+      &.active {
+        background: $dark;
+        color: $light;
+      }
+    }
+  }
+}
+
+a {
+  text-decoration: none;
+  color: $primary;
+}
+
+footer {
+  padding: 0.5rem 0;
+
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.4rem 0.75rem;
+  background-color: $primary;
+  color: $light;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  font-size: 0.9rem;
+  cursor: pointer;
+  user-select: none;
+  box-shadow: $bs;
+  transition: 0.3s;
+
+  svg {
+    fill: $light;
+  }
+
+  &:active {
+    box-shadow: none;
+  }
+
+  &.success {
+    background: $success;
+  }
+
+  &.info {
+    background: $info;
+  }
+
+  &.danger {
+    background-color: $danger;
+  }
+}
+
+h1,
+h2,
+h3 {
+  text-align: center;
+}
+
+h1 {
+  margin: 0.75rem;
+  font-size: 1.6rem;
+}
+
+h2 {
+  margin: 0.5rem;
+  font-size: 1.4rem;
+}
+
+h3 {
+  margin: 0.25rem;
+  font-size: 1.2rem;
+}
+
+.avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 4px;
+  object-fit: cover;
+}
+
+.post-list {
+  @include flex-center;
+  align-items: stretch;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.post-item {
+  @include flex-center(true);
+  gap: 0.25rem;
+  width: 320px;
+  padding: 0.5rem 1rem;
+  background: $light;
+  border-radius: 4px;
+  box-shadow: $bs;
+
+  .date {
+    font-size: 0.85rem;
+  }
+
+  .badge {
+    margin-left: 0.15rem;
+    sup {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.post .post-item {
+  background: none;
+  box-shadow: none;
+}
+
+form {
+  @include flex-center(true);
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+
+  & > div {
+    @include flex-center(true);
+
+    label {
+      font-size: 0.9rem;
+      margin-bottom: 0.25rem;
+    }
+
+    input {
+      font-size: 0.9rem;
+      padding: 0.25rem 0.5rem;
+      border: 1.5px solid rgba(0, 0, 0, 0.4);
+      border-radius: 4px;
+      outline: none;
+      transition: 0.3s;
+
+      &:focus {
+        border: 1.5px solid $primary;
+      }
+    }
+  }
+
+  button {
+    margin-top: 0.5rem;
+  }
+}
+
+.new-comment {
+  margin: 0.5rem;
+  padding: 1rem 3rem;
+  background: $light;
+  border-radius: 4px;
+  box-shadow: $bs;
+}
+
+.comment-list {
+  margin-top: 1rem;
+  padding: 1rem 2rem;
+  border-radius: 4px;
+  background: $light;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  box-shadow: $bs;
+
+  .comment-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    border-bottom: 1px dashed $dark;
+    padding-bottom: 0.5rem;
+
+    &:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+
+    .author {
+      font-size: 0.9rem;
+    }
+  }
+}
+
+.blog {
+  max-width: 1024px;
+}
+
+.avatar-uploader {
+  margin-bottom: 1rem;
+}
+
+.error {
+  padding: 1rem;
+  background: $light;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+
+  h2 {
+    color: $danger;
+  }
+
+  p {
+    font-size: 0.9rem;
+    line-height: 1.3rem;
+  }
+
+  button {
+    margin-top: 0.5rem;
+  }
+}

@@ -1,0 +1,21 @@
+version: '3.9'
+services:
+  next:
+    env_file: .env
+    environment:
+      - REDIS_HOST=redis
+    container_name: ${APP_NAME}_next
+    build: .
+    ports:
+      - 5000:5000
+    restart: on-failure
+
+  redis:
+    env_file: .env
+    container_name: ${APP_NAME}_redis
+    image: bitnami/redis:latest
+    volumes:
+      - ./data_redis:/data
+    ports:
+      - 6379:6379
+    restart: on-failure

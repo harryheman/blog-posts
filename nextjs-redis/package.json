@@ -1,0 +1,26 @@
+{
+  "name": "nextjs-redis",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start:dev": "ENV=development nodemon server/index.js",
+    "start": "ENV=production node server/index.js",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "cron": "^1.8.2",
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "next": "12.1.0",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "redis": "^4.0.4"
+  },
+  "devDependencies": {
+    "eslint": "8.11.0",
+    "eslint-config-next": "12.1.0",
+    "nodemon": "^2.0.15"
+  }
+}

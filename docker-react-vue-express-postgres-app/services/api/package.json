@@ -1,0 +1,24 @@
+{
+  "dependencies": {
+    "@prisma/client": "3.8.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15",
+    "prisma": "^3.8.1"
+  },
+  "name": "api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "prisma migrate dev && prisma db seed && nodemon",
+    "start": "prisma generate && prisma migrate deploy && prisma db seed && node index.js"
+  },
+  "prisma": {
+    "seed": "node prisma/seed.js"
+  }
+}

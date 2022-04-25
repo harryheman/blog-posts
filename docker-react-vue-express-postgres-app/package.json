@@ -1,0 +1,24 @@
+{
+  "name": "docker-react-vue-express-postgres-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/harryheman/docker-test.git",
+  "author": "Igor Agapov <aio350@jetstyle.ru>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "dev:client": "yarn --cwd services/client start",
+    "dev:admin": "yarn --cwd services/admin dev",
+    "dev:api": "yarn --cwd services/api dev",
+    "dev": "concurrently \"yarn dev:client\" \"yarn dev:admin\" \"yarn dev:api\"",
+    "dev:compose:up": "docker compose -f docker-compose.dev.yml up -d",
+    "dev:compose:stop": "docker compose -f docker-compose.dev.yml stop",
+    "dev:compose:rm": "docker compose -f docker-compose.dev.yml rm",
+    "compose:up": "docker compose up -d",
+    "compose:stop": "docker compose stop",
+    "compose:rm": "docker compose rm"
+  },
+  "dependencies": {
+    "concurrently": "^7.0.0"
+  }
+}

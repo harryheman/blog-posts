@@ -1,0 +1,53 @@
+version: '3.9'
+services:
+  postgres:
+    env_file: .env
+    container_name: ${APP_NAME}_postgres
+    image: postgres:${POSTGRES_VERSION}
+    volumes:
+      - data_postgres:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    restart: on-failure
+
+  client:
+    env_file: .env
+    container_name: ${APP_NAME}_client
+    image: node:${NODE_VERSION}
+    working_dir: /app
+    volumes:
+      - ./services/client:/app:rw
+    depends_on:
+      - api
+    ports:
+      - 3000:3000
+    restart: on-failure
+    command: bash -c "yarn start"
+
+  admin:
+    env_file: .env
+    container_name: ${APP_NAME}_admin
+    image: node:${NODE_VERSION}
+    working_dir: /app
+    volumes:
+      - ./services/admin:/app:rw
+    depends_on:
+      - api
+    ports:
+      - 4000:4000
+    restart: on-failure
+    command: bash -c "yarn dev"
+
+  api:
+    env_file: .env
+    container_name: ${APP_NAME}_api
+    build: services/api
+    ports:
+      - 5000:5000
+    depends_on:
+      - postgres
+    restart: on-failure
+    command: bash -c "yarn dev"
+
+volumes:
+  data_postgres:

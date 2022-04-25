@@ -1,0 +1,7 @@
+export { About } from './About'
+export { Home } from './Home'
+export { Register } from './Register'
+export { Login } from './Login'
+export { Profile } from './Profile'
+export { Blog } from './Blog'
+export { Post } from './Post'

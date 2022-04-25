@@ -1,0 +1,26 @@
+version: '3.9'
+services:
+  postgres:
+    env_file: .env
+    container_name: ${APP_NAME}_postgres
+    image: postgres:${POSTGRES_VERSION}
+    volumes:
+      - data_postgres:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    restart: on-failure
+
+  api:
+    env_file: .env
+    environment:
+      - ENV=production
+    container_name: ${APP_NAME}_api
+    build: services/api
+    depends_on:
+      - postgres
+    ports:
+      - 5000:5000
+    restart: on-failure
+
+volumes:
+  data_postgres:
