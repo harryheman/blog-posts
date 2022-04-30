@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-bundler",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
+    "babel-traverse": "^6.26.0",
+    "babylon": "^6.18.0",
+    "fs-extra": "^10.1.0",
+    "uglify-js": "^3.15.4"
+  },
+  "scripts": {
+    "build": "node bundle.js",
+    "start": "node build/index.js"
+  }
+}
