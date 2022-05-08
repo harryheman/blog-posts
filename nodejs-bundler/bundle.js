@@ -104,15 +104,15 @@ function pack() {
   const config = fs.readJSONSync(PATH_TO_CONFIG)
   if (
     !config.entryPoint ||
-    !config.entryPoint.trim() ||
-    typeof config.entryPoint !== 'string'
+    typeof config.entryPoint !== 'string' ||
+    !config.entryPoint.trim()
   ) {
     throw new Error('Entrypoint is required.')
   }
   if (
     !config.outDir ||
-    !config.outDir.trim() ||
-    typeof config.outDir !== 'string'
+    typeof config.outDir !== 'string' ||
+    !config.outDir.trim()
   ) {
     throw new Error('Outdir is required.')
   }
