@@ -56,7 +56,7 @@ app.post('/new-message', async (req, res) => {
       responseText = response.data.joke
     } catch (e) {
       console.log(e)
-      res.status(400).send(e)
+      res.send(e)
     }
   } else if (/\d\d\.\d\d/.test(messageText)) {
     // responseText = dataFromJson[messageText] || 'You have nothing to do on this day.'
@@ -73,7 +73,7 @@ app.post('/new-message', async (req, res) => {
     res.send('Done')
   } catch (e) {
     console.log(e)
-    res.status(400).send(e)
+    res.send(e)
   }
 })
 
