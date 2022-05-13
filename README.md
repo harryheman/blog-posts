@@ -1,1 +1,1 @@
-# My Blog Articles & Tutorials :metal:
+# Code from my articles and tutorials :metal:
