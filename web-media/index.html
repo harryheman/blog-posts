@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Media</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Web Media</h1>
+    </header>
+    <main>
+      <div class="buttons-wrapper">
+        <div>
+          <button id="enumerateDevicesBtn">Enumerate devices</button>
+          <button id="getSupportedConstraintsBtn">
+            Get supported constraints
+          </button>
+        </div>
+        <div>
+          <button id="getUserMediaBtn">Get user media</button>
+          <button id="getDisplayMediaBtn">Get display media</button>
+          <button id="getStreamFromMediaElementBtn">
+            Get stream from media element
+          </button>
+          <button id="stopTracksBtn">Stop tracks</button>
+        </div>
+        <div>
+          <button id="getPhotoCapabilitiesAndSettingsBtn">
+            Get photo capabilities and settings
+          </button>
+          <button id="takePhotoBtn">Take photo</button>
+        </div>
+        <div>
+          <button id="startRecordingBtn">Start recording</button>
+          <button id="pauseOrResumeRecordingBtn">Pause/Resume recording</button>
+          <button id="stopRecordingBtn">Stop recording</button>
+        </div>
+        <div>
+          <button id="startSpeechSynthesisBtn">Start speech synthesis</button>
+          <button id="pauseOrResumeSpeakingBtn">Pause/resume speaking</button>
+          <button id="stopSpeakingBtn">Stop speaking</button>
+        </div>
+        <div>
+          <button id="startSpeechRecognitionBtn">
+            Start speech recognition
+          </button>
+          <button id="stopRecognitionBtn">Stop recognition</button>
+          <button id="abortRecognitionBtn">Abort recognition</button>
+        </div>
+      </div>
+      <p>
+        <pre id="logBox"></pre>
+      </p>
+      <div>
+        <video id="streamReceiver" controls autoplay muted></video>
+        <video id="videoEl" src="./assets/forest.mp4" controls></video>
+        <img id="imgBox" alt="" />
+        <video id="recordBox" controls></video>
+      </div>
+      <div>
+        <textarea id="textarea" rows="4">
+Мы — источник веселья и скорби рудник.
+Мы — вместилище скверны и чистый родник.
+Человек, словно в зеркале мир, — многолик.
+Он ничтожен — и он же безмерно велик!
+        </textarea>
+      </div>
+      <div class="speech-to-text-wrapper">
+        <input type="text" id="interimTranscriptBox" />
+        <textarea id="finalTranscriptBox" rows="4"></textarea>
+      </div>
+    </main>
+    <script type="module" src="/main.js"></script>
+  </body>
+</html>

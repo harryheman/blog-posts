@@ -1,0 +1,24 @@
+video,
+img {
+  max-width: 45%;
+}
+
+.buttons-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.buttons-wrapper > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+textarea {
+  width: 340px;
+}
+
+.speech-to-text-wrapper > * {
+  display: block;
+}
