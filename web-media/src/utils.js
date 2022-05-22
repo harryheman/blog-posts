@@ -28,7 +28,7 @@ export function verifySupport() {
 
   if (
     !('SpeechRecognition' in window) &&
-    !'webkitSpeechRecognition' in window
+    !('webkitSpeechRecognition' in window)
   ) {
     unsupportedFeatures.push('SpeechRecognition')
   }
