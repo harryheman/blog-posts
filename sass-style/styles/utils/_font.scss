@@ -1,0 +1,25 @@
+// перечисление размеров шрифта
+$font-sizes: (
+  "0": 0,
+  xxs: $fs-xxs,
+  xs: $fs-xs,
+  s: $fs-s,
+  m: $fs-m,
+  l: $fs-l,
+  xl: $fs-xl,
+  xxl: $fs-xxl
+);
+
+// перебираем перечисление
+@each $size, $factor in $font-sizes {
+  .fs-#{$size} {
+    font-size: $factor;
+  }
+}
+
+// перебираем возможные значения свойства `font-weight`
+@each $v in 100, 200, 300, 400, 500, 600, 700, 800, 900 {
+  .fw-#{$v} {
+    font-weight: $v;
+  }
+}

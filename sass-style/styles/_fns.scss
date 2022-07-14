@@ -1,0 +1,9 @@
+// функция для удаления px
+@function strip-unit($v) {
+  @return $v / ($v * 0 + 1);
+}
+
+// функция для конвертирования px в rem
+@function rem($v) {
+  @return #{strip-unit($v / $fs-base)} + rem;
+}

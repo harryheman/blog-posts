@@ -1,0 +1,58 @@
+// перечисление отступов
+$spacers: (
+  "0": 0,
+  xxs: $spacer-xxs,
+  xs: $spacer-xs,
+  s: $spacer-s,
+  m: $spacer-m,
+  l: $spacer-l,
+  xl: $spacer-xl,
+  xxl: $spacer-xxl
+);
+
+// типы отступов
+$types: (
+  "m": "margin",
+  "p": "padding"
+);
+
+// стороны
+$sides: (
+  "": "",
+  t: "-top",
+  r: "-right",
+  b: "-bottom",
+  l: "-left"
+);
+
+// перебираем перечисление
+@each $key-spacer, $factor in $spacers {
+  // перебираем типы
+  @each $key-type, $type in $types {
+    // перебираем стороны
+    @each $key-side, $side in $sides {
+      // для всех и каждой стороны
+      .#{$key-type}#{$key-side}-#{$key-spacer} {
+        #{$type}#{$side}: $factor;
+      }
+    }
+
+    // для горизонтального отступа
+    .#{$key-type}x-#{$key-spacer} {
+      #{$type}-left: $factor;
+      #{$type}-right: $factor;
+    }
+
+    // для вертикального отступа
+    .#{$key-type}y-#{$key-spacer} {
+      #{$type}-bottom: $factor;
+      #{$type}-top: $factor;
+    }
+  }
+
+  // дополнительно
+  // пространство между гридами или флексами
+  .gap-#{$key-spacer} {
+    gap: $factor;
+  }
+}

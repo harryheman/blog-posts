@@ -1,0 +1,36 @@
+// justify-content
+@each $v in start, end, center, stretch, between, around, evenly {
+  .justify-#{$v} {
+    @if ($v == start) or ($v == end) {
+      justify-content: flex-#{$v};
+    } @else if ($v == between) or ($v == around) or ($v == evenly) {
+      justify-content: space-#{$v};
+    } @else {
+      justify-content: $v;
+    }
+  }
+}
+
+// align-items
+@each $v in start, end, center, stretch {
+  .items-#{$v} {
+    @if ($v == start) or ($v == end) {
+      align-items: flex-#{$v};
+    } @else {
+      align-items: $v;
+    }
+  }
+}
+
+// дополнительно
+.flex-center {
+  @include flex-center();
+}
+
+.flex-center-column {
+  @include flex-center(column);
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}

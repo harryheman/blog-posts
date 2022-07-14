@@ -1,0 +1,55 @@
+// минимальная и максимальная ширина области просмотра
+$min-w: 375px;
+$max-w: 1536px;
+
+// отступы
+$spacer-base: 30px;
+
+$spacer-xxs: 0.25 * $spacer-base;
+$spacer-xs: 0.5 * $spacer-base;
+$spacer-s: 0.75 * $spacer-base;
+$spacer-m: $spacer-base;
+$spacer-l: 1.5 * $spacer-base;
+$spacer-xl: 2 * $spacer-base;
+$spacer-xxl: 2.25 * $spacer-base;
+
+// шрифты
+$fs-base: 16px;
+
+$fs-xxs: 11px;
+$fs-xs: 12px;
+$fs-s: 14px;
+$fs-m: $fs-base;
+$fs-l: 22px;
+$fs-xl: 24px;
+$fs-xxl: 26px;
+
+// цвета
+// bootstrap
+$primary: #0275d8;
+$success: #5cb85c;
+$info: #5bc0de;
+$warning: #f0ad4e;
+$danger: #d9534f;
+$light: #f7f7f7;
+$dark: #292b2c;
+// дополнительно
+$gray100: #fefefe;
+$gray200: #fbfbfb;
+$gray300: #fafafa;
+$gray400: #f3f3f3;
+$gray500: #eeeeee;
+$gray600: #a3a3a3;
+$gray700: #8c8c8c;
+$gray800: #555555;
+$gray900: #333333;
+$white: #fff;
+$black: #000;
+
+// контрольные точки
+// bootstrap
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1200px;
+$xxl: 1400px;

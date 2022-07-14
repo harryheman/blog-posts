@@ -1,0 +1,48 @@
+// display
+@each $v in none, inline, block, inline-block, flex, inline-flex, grid,
+  inline-grid
+{
+  .d-#{$v} {
+    display: $v;
+  }
+}
+
+// position
+@each $v in relative, absolute, fixed, sticky {
+  .p-#{$v} {
+    position: $v;
+  }
+}
+
+// контент для читалок
+// visually-hidden
+.sr-only {
+  background: none;
+  border: none;
+  color: none;
+  cursor: none;
+  height: 0;
+  margin: 0;
+  opacity: 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0;
+  pointer-events: none;
+  position: absolute;
+  user-select: none;
+  visibility: hidden;
+  white-space: nowrap;
+  width: 0;
+  z-index: -1;
+}
+
+// дополнительно
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-center {
+  text-align: center;
+}
