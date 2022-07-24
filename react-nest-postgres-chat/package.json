@@ -1,0 +1,19 @@
+{
+  "name": "react-nest-postgres-chat",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "devDependencies": {
+    "prisma": "^4.0.0"
+  },
+  "dependencies": {
+    "@prisma/client": "^4.0.0",
+    "concurrently": "^7.3.0"
+  },
+  "scripts": {
+    "dev:client": "yarn --cwd client dev",
+    "dev:server": "yarn --cwd server start:dev",
+    "dev": "concurrently \"yarn dev:client\" \"yarn dev:server\""
+  }
+}
