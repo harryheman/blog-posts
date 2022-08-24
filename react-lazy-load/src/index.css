@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.item {
+  background-color: deepskyblue;
+  display: grid;
+  font-size: 2rem;
+  height: 50vh;
+  place-content: center;
+}
+
+.outer {
+  background-color: deepskyblue;
+  height: 100vh;
+  margin-top: 101vh;
+  overflow: hidden;
+}
+
+.inner {
+  display: grid;
+  min-height: 4rem;
+  overflow: hidden;
+  place-content: center;
+}
+
+.inner p {
+  font-size: 4rem;
+  transition: 0.5s;
+}
