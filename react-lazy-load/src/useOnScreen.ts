@@ -34,7 +34,7 @@ const useOnScreen = (
     return () => observer.unobserve(observable);
   }, []);
 
-  const values = React.useMemo(
+  const memoizedValues = React.useMemo(
     () => ({
       isIntersecting,
       ratio: Math.round(ratio * 100),
@@ -44,7 +44,7 @@ const useOnScreen = (
     [isIntersecting, ratio, width, height]
   );
 
-  return values;
+  return memoizedValues;
 };
 
 export default useOnScreen;
