@@ -14,19 +14,24 @@ const useOnScreen = (
   ref: React.RefObject<HTMLElement | null>,
   observerOptions?: IntersectionObserverInit
 ) => {
-  const [isIntersecting, setIntersecting] = React.useState(false);
-  const [ratio, setRatio] = React.useState(0);
-  const [width, setWidth] = React.useState(0);
-  const [height, setHeight] = React.useState(0);
+  const [intersectionValues, setIntersectionValues] = React.useState({
+    isIntersecting: false,
+    ratio: 0,
+    width: 0,
+    height: 0,
+  });
 
   React.useEffect(() => {
     const observable = ref.current as HTMLElement;
 
     const observer = new IntersectionObserver(([entry]) => {
-      setIntersecting(entry.isIntersecting);
-      setRatio(entry.intersectionRatio);
-      setWidth(entry.intersectionRect.width);
-      setHeight(entry.intersectionRect.height);
+      setIntersectionValues((prevValues) => ({
+        ...prevValues,
+        isIntersecting: entry.isIntersecting,
+        ratio: Math.round(entry.intersectionRatio * 100),
+        width: Math.round(entry.intersectionRect.width),
+        height: Math.round(entry.intersectionRect.height),
+      }));
     }, observerOptions);
 
     observer.observe(observable);
@@ -34,17 +39,7 @@ const useOnScreen = (
     return () => observer.unobserve(observable);
   }, []);
 
-  const memoizedValues = React.useMemo(
-    () => ({
-      isIntersecting,
-      ratio: Math.round(ratio * 100),
-      width: Math.round(width),
-      height: Math.round(height),
-    }),
-    [isIntersecting, ratio, width, height]
-  );
-
-  return memoizedValues;
+  return intersectionValues;
 };
 
 export default useOnScreen;
