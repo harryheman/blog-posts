@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+}
+
+#root {
+  display: grid;
+  gap: 0.5rem;
+  height: 100vh;
+  place-content: center;
+  text-align: center;
+}
