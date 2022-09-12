@@ -39,8 +39,11 @@ function useDeepEffect(cb: (...args: any[]) => void, deps: any[]) {
       return;
     }
 
-    if (!areEqual(deps, prevDeps)) {
-      setNeedUpdate({});
+    for (const i in deps) {
+      if (!areEqual(deps[i], prevDeps[i])) {
+        setNeedUpdate({});
+        break;
+      }
     }
   }, deps);
 
