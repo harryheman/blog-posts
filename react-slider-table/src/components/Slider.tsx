@@ -14,21 +14,15 @@ const SLIDES_PER_VIEW = 3;
 
 function Slider({ items, setSlideWidth, setScrollLeft, offsetX }: Props) {
   const swiperRef = useRef<TSwiper>();
-  const paginationBulletRefs = useRef<HTMLSpanElement[]>([]);
-  const paginationBulletXCoords = useRef<number[]>([]);
+  const slideXPositions = useRef<number[]>([]);
 
   const onImagesReady = () => {
     if (!swiperRef.current) return;
 
     const slideWidth = swiperRef.current.slides[0].swiperSlideSize;
 
-    const bullets = swiperRef.current.pagination
-      .bullets as unknown as HTMLSpanElement[];
-    if (!bullets.length) return;
-    paginationBulletRefs.current = bullets;
-
-    for (const i in bullets) {
-      paginationBulletXCoords.current.push(slideWidth * Number(i));
+    for (const i in items) {
+      slideXPositions.current.push(slideWidth * Number(i));
     }
 
     setSlideWidth(slideWidth);
@@ -46,11 +40,13 @@ function Slider({ items, setSlideWidth, setScrollLeft, offsetX }: Props) {
   };
 
   useEffect(() => {
+    if (!swiperRef.current) return;
+
     let min = 0;
     let i = 0;
 
-    for (const j in paginationBulletXCoords.current) {
-      const dif = Math.abs(paginationBulletXCoords.current[j] - offsetX);
+    for (const j in slideXPositions.current) {
+      const dif = Math.abs(slideXPositions.current[j] - offsetX);
 
       if (dif === 0) {
         min = 0;
@@ -64,8 +60,8 @@ function Slider({ items, setSlideWidth, setScrollLeft, offsetX }: Props) {
       }
     }
 
-    if (paginationBulletRefs.current[i]) {
-      paginationBulletRefs.current[i].click();
+    if (items[i]) {
+      swiperRef.current.slideTo(i);
     }
   }, [offsetX]);
 
