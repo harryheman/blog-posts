@@ -14,16 +14,14 @@ const SLIDES_PER_VIEW = 3;
 
 function Slider({ items, setSlideWidth, setScrollLeft, offsetX }: Props) {
   const swiperRef = useRef<TSwiper>();
-  const slideXPositions = useRef<number[]>([]);
+  const slidesGrid = useRef<number[]>([]);
 
   const onImagesReady = () => {
     if (!swiperRef.current) return;
 
     const slideWidth = swiperRef.current.slides[0].swiperSlideSize;
 
-    for (const i in items) {
-      slideXPositions.current.push(slideWidth * Number(i));
-    }
+    slidesGrid.current = swiperRef.current.slidesGrid;
 
     setSlideWidth(slideWidth);
   };
@@ -31,11 +29,7 @@ function Slider({ items, setSlideWidth, setScrollLeft, offsetX }: Props) {
   const onSlideChange = () => {
     if (!swiperRef.current) return;
 
-    const { transform } = swiperRef.current.wrapperEl.style;
-    const match = transform.match(/-?\d+(\.\d+)?px/);
-    if (!match) return;
-
-    const scrollLeft = Math.abs(Number(match[0].replace("px", "")));
+    const scrollLeft = Math.abs(swiperRef.current.translate);
     setScrollLeft(scrollLeft);
   };
 
@@ -45,8 +39,8 @@ function Slider({ items, setSlideWidth, setScrollLeft, offsetX }: Props) {
     let min = 0;
     let i = 0;
 
-    for (const j in slideXPositions.current) {
-      const dif = Math.abs(slideXPositions.current[j] - offsetX);
+    for (const j in slidesGrid.current) {
+      const dif = Math.abs(slidesGrid.current[j] - offsetX);
 
       if (dif === 0) {
         min = 0;

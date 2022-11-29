@@ -19,4 +19,5 @@ export type TSwiper = Swiper & {
   slides: {
     swiperSlideSize: number;
   }[];
+  slidesGrid: number[];
 };
