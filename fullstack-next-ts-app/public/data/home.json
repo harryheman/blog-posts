@@ -1,0 +1,32 @@
+{
+  "slides": [
+    {
+      "id": 1,
+      "imgSrc": "/img/landscape.jpg",
+      "imgAlt": "First landscape",
+      "title": "First block",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni amet illum recusandae numquam iste repudiandae inventore. Sit quis, impedit autem dolorum, perspiciatis tempora voluptas consectetur expedita aspernatur reiciendis labore recusandae voluptatibus, explicabo laboriosam ut temporibus doloremque! Voluptate recusandae commodi quis dolor adipisci fugiat earum? Ratione aliquam modi deserunt voluptatibus error."
+    },
+    {
+      "id": 2,
+      "imgSrc": "/img/landscape2.jpg",
+      "imgAlt": "Second landscape",
+      "title": "Second block",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni amet illum recusandae numquam iste repudiandae inventore. Sit quis, impedit autem dolorum, perspiciatis tempora voluptas consectetur expedita aspernatur reiciendis labore recusandae voluptatibus, explicabo laboriosam ut temporibus doloremque! Voluptate recusandae commodi quis dolor adipisci fugiat earum? Ratione aliquam modi deserunt voluptatibus error."
+    },
+    {
+      "id": 3,
+      "imgSrc": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "imgAlt": "Third landscape",
+      "title": "Third block",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni amet illum recusandae numquam iste repudiandae inventore. Sit quis, impedit autem dolorum, perspiciatis tempora voluptas consectetur expedita aspernatur reiciendis labore recusandae voluptatibus, explicabo laboriosam ut temporibus doloremque! Voluptate recusandae commodi quis dolor adipisci fugiat earum? Ratione aliquam modi deserunt voluptatibus error."
+    },
+    {
+      "id": 4,
+      "imgSrc": "https://images.unsplash.com/photo-1434725039720-aaad6dd32dfe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1042&q=80",
+      "imgAlt": "Forth landscape",
+      "title": "Forth block",
+      "description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni amet illum recusandae numquam iste repudiandae inventore. Sit quis, impedit autem dolorum, perspiciatis tempora voluptas consectetur expedita aspernatur reiciendis labore recusandae voluptatibus, explicabo laboriosam ut temporibus doloremque! Voluptate recusandae commodi quis dolor adipisci fugiat earum? Ratione aliquam modi deserunt voluptatibus error."
+    }
+  ]
+}

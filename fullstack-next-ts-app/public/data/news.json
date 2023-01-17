@@ -1,0 +1,64 @@
+{
+  "news": [
+    {
+      "id": 1,
+      "imgSrc": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "imgAlt": "First landscape",
+      "author": "John",
+      "datePublished": "2022/12/31",
+      "title": "First news",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vel, odio perspiciatis alias quos et labore sit ab laborum. Laboriosam hic autem earum tempore voluptas?",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos recusandae aspernatur, distinctio autem quia dolor sed libero dignissimos suscipit. Earum aliquam eius eaque corporis cupiditate velit, odit ullam officia nam quibusdam ex laborum possimus eveniet aliquid adipisci assumenda necessitatibus ducimus. Enim nesciunt fuga, aperiam deserunt quia, aut itaque omnis similique molestias veniam assumenda repellendus consequuntur error exercitationem ex debitis quod quidem magni. Cupiditate iure corporis veritatis tenetur rerum, animi quisquam praesentium accusantium est quas in! Eligendi vitae corrupti sunt distinctio nisi blanditiis atque reprehenderit incidunt obcaecati corporis laborum voluptate iusto nostrum dolorum temporibus facere inventore, quaerat optio unde consequuntur velit."
+    },
+    {
+      "id": 2,
+      "imgSrc": "https://images.unsplash.com/photo-1494500764479-0c8f2919a3d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "imgAlt": "Second landscape",
+      "author": "Jane",
+      "datePublished": "2022/12/31",
+      "title": "Second news",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vel, odio perspiciatis alias quos et labore sit ab laborum. Laboriosam hic autem earum tempore voluptas?",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos recusandae aspernatur, distinctio autem quia dolor sed libero dignissimos suscipit. Earum aliquam eius eaque corporis cupiditate velit, odit ullam officia nam quibusdam ex laborum possimus eveniet aliquid adipisci assumenda necessitatibus ducimus. Enim nesciunt fuga, aperiam deserunt quia, aut itaque omnis similique molestias veniam assumenda repellendus consequuntur error exercitationem ex debitis quod quidem magni. Cupiditate iure corporis veritatis tenetur rerum, animi quisquam praesentium accusantium est quas in! Eligendi vitae corrupti sunt distinctio nisi blanditiis atque reprehenderit incidunt obcaecati corporis laborum voluptate iusto nostrum dolorum temporibus facere inventore, quaerat optio unde consequuntur velit."
+    },
+    {
+      "id": 3,
+      "imgSrc": "https://images.unsplash.com/photo-1506744038136-46273834b3fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80",
+      "imgAlt": "Third landscape",
+      "author": "Bob",
+      "datePublished": "2022/12/31",
+      "title": "Third news",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vel, odio perspiciatis alias quos et labore sit ab laborum. Laboriosam hic autem earum tempore voluptas?",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos recusandae aspernatur, distinctio autem quia dolor sed libero dignissimos suscipit. Earum aliquam eius eaque corporis cupiditate velit, odit ullam officia nam quibusdam ex laborum possimus eveniet aliquid adipisci assumenda necessitatibus ducimus. Enim nesciunt fuga, aperiam deserunt quia, aut itaque omnis similique molestias veniam assumenda repellendus consequuntur error exercitationem ex debitis quod quidem magni. Cupiditate iure corporis veritatis tenetur rerum, animi quisquam praesentium accusantium est quas in! Eligendi vitae corrupti sunt distinctio nisi blanditiis atque reprehenderit incidunt obcaecati corporis laborum voluptate iusto nostrum dolorum temporibus facere inventore, quaerat optio unde consequuntur velit."
+    },
+    {
+      "id": 4,
+      "imgSrc": "https://images.unsplash.com/photo-1434725039720-aaad6dd32dfe?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1042&q=80",
+      "imgAlt": "Forth landscape",
+      "author": "Alice",
+      "datePublished": "2022/12/31",
+      "title": "Forth news",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vel, odio perspiciatis alias quos et labore sit ab laborum. Laboriosam hic autem earum tempore voluptas?",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos recusandae aspernatur, distinctio autem quia dolor sed libero dignissimos suscipit. Earum aliquam eius eaque corporis cupiditate velit, odit ullam officia nam quibusdam ex laborum possimus eveniet aliquid adipisci assumenda necessitatibus ducimus. Enim nesciunt fuga, aperiam deserunt quia, aut itaque omnis similique molestias veniam assumenda repellendus consequuntur error exercitationem ex debitis quod quidem magni. Cupiditate iure corporis veritatis tenetur rerum, animi quisquam praesentium accusantium est quas in! Eligendi vitae corrupti sunt distinctio nisi blanditiis atque reprehenderit incidunt obcaecati corporis laborum voluptate iusto nostrum dolorum temporibus facere inventore, quaerat optio unde consequuntur velit."
+    },
+    {
+      "id": 5,
+      "imgSrc": "https://images.unsplash.com/34/BA1yLjNnQCI1yisIZGEi_2013-07-16_1922_IMG_9873.jpg?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1171&q=80",
+      "imgAlt": "Fifth landscape",
+      "author": "Alice",
+      "datePublished": "2022/12/31",
+      "title": "Fifth news",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vel, odio perspiciatis alias quos et labore sit ab laborum. Laboriosam hic autem earum tempore voluptas?",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos recusandae aspernatur, distinctio autem quia dolor sed libero dignissimos suscipit. Earum aliquam eius eaque corporis cupiditate velit, odit ullam officia nam quibusdam ex laborum possimus eveniet aliquid adipisci assumenda necessitatibus ducimus. Enim nesciunt fuga, aperiam deserunt quia, aut itaque omnis similique molestias veniam assumenda repellendus consequuntur error exercitationem ex debitis quod quidem magni. Cupiditate iure corporis veritatis tenetur rerum, animi quisquam praesentium accusantium est quas in! Eligendi vitae corrupti sunt distinctio nisi blanditiis atque reprehenderit incidunt obcaecati corporis laborum voluptate iusto nostrum dolorum temporibus facere inventore, quaerat optio unde consequuntur velit."
+    },
+    {
+      "id": 6,
+      "imgSrc": "https://images.unsplash.com/photo-1429704658776-3d38c9990511?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1079&q=80",
+      "imgAlt": "Sixth landscape",
+      "author": "Bob",
+      "datePublished": "2022/12/31",
+      "title": "Sixth news",
+      "description": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Blanditiis vel, odio perspiciatis alias quos et labore sit ab laborum. Laboriosam hic autem earum tempore voluptas?",
+      "text": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos recusandae aspernatur, distinctio autem quia dolor sed libero dignissimos suscipit. Earum aliquam eius eaque corporis cupiditate velit, odit ullam officia nam quibusdam ex laborum possimus eveniet aliquid adipisci assumenda necessitatibus ducimus. Enim nesciunt fuga, aperiam deserunt quia, aut itaque omnis similique molestias veniam assumenda repellendus consequuntur error exercitationem ex debitis quod quidem magni. Cupiditate iure corporis veritatis tenetur rerum, animi quisquam praesentium accusantium est quas in! Eligendi vitae corrupti sunt distinctio nisi blanditiis atque reprehenderit incidunt obcaecati corporis laborum voluptate iusto nostrum dolorum temporibus facere inventore, quaerat optio unde consequuntur velit."
+    }
+  ]
+}

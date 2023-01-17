@@ -1,0 +1,23 @@
+a {
+  text-decoration: none;
+}
+
+header a {
+  border-bottom: 1px dashed transparent;
+  color: white;
+  transition: border-bottom 250ms;
+
+  &:hover {
+    border-bottom: 1px dashed white;
+  }
+
+  &.current {
+    border-bottom: 1px solid white;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  object-fit: cover;
+}
