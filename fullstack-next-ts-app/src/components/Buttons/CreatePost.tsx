@@ -25,7 +25,7 @@ export default function CreatePostButton() {
     />
   ) : (
     <Button variant='contained' sx={{ my: 2 }} onClick={onClick}>
-      Создать новый пост
+      Create new post
     </Button>
   )
 }
