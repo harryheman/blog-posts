@@ -1,5 +1,5 @@
 import CustomHead from '@/components/Head'
-import { News, NewsArr } from '@/types'
+import type { News, NewsArr } from '@/types'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
 import {
   Avatar,
@@ -12,7 +12,7 @@ import {
   Typography
 } from '@mui/material'
 import { blue, red } from '@mui/material/colors'
-import {
+import type {
   GetStaticPathsContext,
   GetStaticPropsContext,
   InferGetStaticPropsType

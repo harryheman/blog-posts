@@ -2,7 +2,7 @@ import { List, ListItem } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import ActiveLink from '../ActiveLink'
 import ProfileButton from '../Buttons/Profile'
-import { PageLinks } from '../Header'
+import type { PageLinks } from '../Header'
 
 type Props = {
   links: PageLinks

@@ -63,14 +63,20 @@ export default function App({
             FallbackComponent={ErrorFallback}
             onReset={() => window.location.reload()}
           >
-            <Container maxWidth='xl' sx={{ overflow: 'hidden' }}>
-              <Box display='flex' flexDirection='column' minHeight='100vh'>
-                <Header />
-                <Box component='main' flexGrow={1} ref={animationParent}>
-                  <Component {...pageProps} />
-                </Box>
-                <Footer />
+            <Container
+              maxWidth='xl'
+              sx={{
+                minHeight: '100vh',
+                display: 'flex',
+                flexDirection: 'column',
+                overflow: 'hidden'
+              }}
+            >
+              <Header />
+              <Box component='main' flexGrow={1} ref={animationParent}>
+                <Component {...pageProps} />
               </Box>
+              <Footer />
             </Container>
             <ToastContainer autoClose={2000} hideProgressBar theme='colored' />
           </ErrorBoundary>

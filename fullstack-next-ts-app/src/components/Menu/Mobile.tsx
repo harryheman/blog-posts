@@ -4,7 +4,7 @@ import { useTheme } from '@mui/material/styles'
 import { useState } from 'react'
 import ActiveLink from '../ActiveLink'
 import ProfileButton from '../Buttons/Profile'
-import { PageLinks } from '../Header'
+import type { PageLinks } from '../Header'
 
 type Props = {
   links: PageLinks
@@ -15,10 +15,11 @@ export default function MobileMenu({ links }: Props) {
   const [anchorEl, setAnchorEl] = useState<HTMLElement | null>(null)
   const open = Boolean(anchorEl)
 
-  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+  const openMenu = (e: React.MouseEvent<HTMLDivElement>) => {
     setAnchorEl(e.currentTarget)
   }
-  const handleClose = () => {
+
+  const closeMenu = () => {
     setAnchorEl(null)
   }
 
@@ -34,15 +35,15 @@ export default function MobileMenu({ links }: Props) {
         aria-controls={open ? 'mobile-menu' : undefined}
         aria-haspopup='true'
         aria-expanded={open ? 'true' : undefined}
-        onClick={handleClick}
+        onClick={openMenu}
       >
         <MenuIcon />
       </ListItemButton>
-      <Drawer anchor='left' open={open} onClose={handleClose} id='mobile-menu'>
+      <Drawer anchor='left' open={open} onClose={closeMenu} id='mobile-menu'>
         <List sx={{ minWidth: '128px' }}>
           {links.map((link, i) => (
             <ListItem
-              onClick={handleClose}
+              onClick={closeMenu}
               key={i}
               sx={{ justifyContent: 'center' }}
             >

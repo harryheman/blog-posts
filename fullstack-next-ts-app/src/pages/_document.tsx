@@ -30,12 +30,12 @@ export default function MyDocument(props: any) {
   )
 }
 
-// `getInitialProps` belongs to `_document` (instead of `_app`),
-// it's compatible with static-site generation (SSG).
+// `getInitialProps` принадлежит `_document` (а не `_app`),
+// это совместимо с генерацией статического контента (SSG).
 MyDocument.getInitialProps = async (docContext: DocumentContext) => {
-  // Resolution order
+  // Порядок разрешения
   //
-  // On the server:
+  // На сервере:
   // 1. app.getInitialProps
   // 2. page.getInitialProps
   // 3. document.getInitialProps
@@ -43,13 +43,13 @@ MyDocument.getInitialProps = async (docContext: DocumentContext) => {
   // 5. page.render
   // 6. document.render
   //
-  // On the server with error:
+  // На сервере в случае ошибки:
   // 1. document.getInitialProps
   // 2. app.render
   // 3. page.render
   // 4. document.render
   //
-  // On the client
+  // На клиенте:
   // 1. app.getInitialProps
   // 2. page.getInitialProps
   // 3. app.render
@@ -57,8 +57,8 @@ MyDocument.getInitialProps = async (docContext: DocumentContext) => {
 
   const originalRenderPage = docContext.renderPage
 
-  // You can consider sharing the same Emotion cache between all the SSR requests to speed up performance.
-  // However, be aware that it can have global side effects.
+  // Кэш Emotion можно распределять между всеми запросами SSR для повышения производительности.
+  // Однако это может иметь глобальные побочные эффекты.
   const cache = createEmotionCache()
   const { extractCriticalToChunks } = createEmotionServer(cache)
 
@@ -71,8 +71,8 @@ MyDocument.getInitialProps = async (docContext: DocumentContext) => {
     })
 
   const docProps = await Document.getInitialProps(docContext)
-  // This is important. It prevents Emotion to render invalid HTML.
-  // See https://github.com/mui/material-ui/issues/26561#issuecomment-855286153
+  // Важно. Это не позволяет Emotion рендерить невалидный HTML.
+  // См. https://github.com/mui/material-ui/issues/26561#issuecomment-855286153
   const emotionStyles = extractCriticalToChunks(docProps.html)
   const emotionStyleTags = emotionStyles.styles.map((style) => (
     <style

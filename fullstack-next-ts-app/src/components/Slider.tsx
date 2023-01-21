@@ -3,10 +3,10 @@ import Image from 'next/image'
 import { useState } from 'react'
 import { Autoplay, Navigation, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Slides } from '../types'
+import type { Blocks } from '../types'
 
 type Props = {
-  slides: Slides
+  slides: Blocks
 }
 
 export default function Slider({ slides }: Props) {

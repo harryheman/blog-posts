@@ -1,42 +1,33 @@
 module.exports = function (api) {
-  const isServer = api.caller((caller) => caller?.isServer);
-  const isCallerDevelopment = api.caller((caller) => caller?.isDev);
+  const isServer = api.caller((caller) => caller?.isServer)
+  const isCallerDevelopment = api.caller((caller) => caller?.isDev)
 
   const presets = [
     [
-      "next/babel",
+      'next/babel',
       {
-        "preset-react": {
-          runtime: "automatic",
+        'preset-react': {
+          runtime: 'automatic',
           importSource:
             !isServer && isCallerDevelopment
-              ? "@welldone-software/why-did-you-render"
-              : "react",
-        },
-      },
-    ],
-  ];
+              ? '@welldone-software/why-did-you-render'
+              : 'react'
+        }
+      }
+    ]
+  ]
 
   const plugins = [
     [
-      "babel-plugin-import",
+      'babel-plugin-import',
       {
-        libraryName: "@mui/material",
-        libraryDirectory: "",
-        camel2DashComponentName: false,
+        libraryName: '@mui/material',
+        libraryDirectory: '',
+        camel2DashComponentName: false
       },
-      "core",
-    ],
-    [
-      "babel-plugin-import",
-      {
-        libraryName: "@mui/icons-material",
-        libraryDirectory: "",
-        camel2DashComponentName: false,
-      },
-      "icons",
-    ],
-  ];
+      'core'
+    ]
+  ]
 
-  return { presets, plugins };
-};
+  return { presets, plugins }
+}

@@ -20,7 +20,7 @@ export type NextApiMiddleware<H, R> = (
   handler: H
 ) => (req: NextApiRequest, res: R) => void
 
-export type Slide = {
+export type Block = {
   id: number
   imgSrc: string
   imgAlt: string
@@ -28,7 +28,7 @@ export type Slide = {
   description: string
 }
 
-export type Slides = Slide[]
+export type Blocks = Block[]
 
 export type News = {
   id: number

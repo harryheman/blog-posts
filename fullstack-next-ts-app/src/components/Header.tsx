@@ -18,5 +18,3 @@ export default function Header() {
     </AppBar>
   )
 }
-
-// Header.whyDidYouRender = true;

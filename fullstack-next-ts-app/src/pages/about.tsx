@@ -1,9 +1,9 @@
 import Animate from '@/components/AnimateIn'
 import CustomHead from '@/components/Head'
 import NewsPreview from '@/components/NewsPreview'
-import { NewsArr } from '@/types'
+import type { NewsArr } from '@/types'
 import { Grid, Typography } from '@mui/material'
-import { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
+import type { GetStaticPropsContext, InferGetStaticPropsType } from 'next'
 
 export default function About({
   data
@@ -29,22 +29,18 @@ export default function About({
         voluptate nesciunt nisi veniam modi cupiditate, amet id velit deserunt
         soluta? Ex, voluptate libero.
       </Typography>
-      {news.length > 0 && (
-        <>
-          <Typography variant='h5' textAlign='center' py={2}>
-            News
-          </Typography>
-          <Grid container spacing={2} pb={2}>
-            {news.map((n) => (
-              <Grid item md={6} lg={4} key={n.id}>
-                <Animate.FadeIn>
-                  <NewsPreview news={n} />
-                </Animate.FadeIn>
-              </Grid>
-            ))}
+      <Typography variant='h5' textAlign='center' py={2}>
+        News
+      </Typography>
+      <Grid container spacing={2} pb={2}>
+        {news.map((n) => (
+          <Grid item md={6} lg={4} key={n.id}>
+            <Animate.FadeIn>
+              <NewsPreview news={n} />
+            </Animate.FadeIn>
           </Grid>
-        </>
-      )}
+        ))}
+      </Grid>
     </>
   )
 }
