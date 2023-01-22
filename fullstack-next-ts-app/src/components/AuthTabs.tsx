@@ -54,7 +54,7 @@ export default function AuthTabs({ closeModal }: Props) {
   return (
     <>
       <Box display='flex'>
-        <Tabs value={tabIndex} onChange={handleChange} aria-label='Auth tabs'>
+        <Tabs value={tabIndex} onChange={handleChange} aria-label='auth tabs'>
           <Tab label='Register' {...a11yProps(0)} />
           <Tab label='Login' {...a11yProps(1)} />
         </Tabs>

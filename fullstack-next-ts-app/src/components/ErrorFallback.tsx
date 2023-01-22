@@ -30,7 +30,7 @@ export default function ErrorFallback({ error, resetErrorBoundary }: Props) {
       <CardHeader title='Something went wrong' />
       <CardContent>
         <Typography variant='body1' color='error'>
-          {error.message}
+          {error.message || 'Unknown error'}
         </Typography>
       </CardContent>
       <CardActions>

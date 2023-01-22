@@ -15,8 +15,9 @@ export default function UploadForm({ closeModal }: Props) {
   if (!user) return null
 
   const handleSubmit: React.FormEventHandler<HTMLFormElement> = async (e) => {
-    e.preventDefault()
     if (!file) return
+
+    e.preventDefault()
 
     const formData = new FormData()
 
