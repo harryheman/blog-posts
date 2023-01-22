@@ -1,5 +1,6 @@
-import { CookieSerializeOptions } from 'cookie'
-import { NextApiRequest, NextApiResponse } from 'next'
+import type { User } from '@prisma/client'
+import type { CookieSerializeOptions } from 'cookie'
+import type { NextApiRequest, NextApiResponse } from 'next'
 
 export type CookieArgs = {
   name: string
@@ -42,3 +43,8 @@ export type News = {
 }
 
 export type NewsArr = News[]
+
+export type UserResponseData = {
+  user: Omit<User, 'password'>
+  accessToken: string
+}

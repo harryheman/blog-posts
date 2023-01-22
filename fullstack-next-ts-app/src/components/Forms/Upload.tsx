@@ -26,7 +26,7 @@ export default function UploadForm({ closeModal }: Props) {
     formData.append('avatar', _file)
 
     try {
-      const response = await fetch('/api/upload', {
+      const res = await fetch('/api/upload', {
         method: 'POST',
         body: formData,
         headers: {
@@ -34,11 +34,11 @@ export default function UploadForm({ closeModal }: Props) {
         }
       })
 
-      if (!response.ok) {
-        throw response
+      if (!res.ok) {
+        throw res
       }
 
-      const user = await response.json()
+      const user = await res.json()
       mutate({ user })
 
       if (closeModal) {

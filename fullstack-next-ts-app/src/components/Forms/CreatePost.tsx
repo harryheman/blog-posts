@@ -12,7 +12,7 @@ import {
 } from '@mui/material'
 import { red } from '@mui/material/colors'
 import { useTheme } from '@mui/material/styles'
-import { Post } from '@prisma/client'
+import type { Post } from '@prisma/client'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import FormFieldsWrapper from './Wrapper'
@@ -69,7 +69,9 @@ export default function CreatePostForm({ closeModal }: Props) {
   }
 
   const onInput = () => {
-    setErrors({ content: undefined })
+    if (Object.keys(errors).length) {
+      setErrors({ content: undefined })
+    }
   }
 
   return (

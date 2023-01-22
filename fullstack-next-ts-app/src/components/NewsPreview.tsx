@@ -11,7 +11,7 @@ import {
 } from '@mui/material'
 import { blue, red } from '@mui/material/colors'
 import Link from 'next/link'
-import { News } from '../types'
+import type { News } from '../types'
 
 type Props = {
   news: News

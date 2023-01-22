@@ -9,7 +9,7 @@ import {
   CardHeader,
   Typography
 } from '@mui/material'
-import { Like, Post } from '@prisma/client'
+import type { Like, Post } from '@prisma/client'
 import Link from 'next/link'
 import EditPostButton from './Buttons/EditPost'
 import LikePostButton from './Buttons/LikePost'

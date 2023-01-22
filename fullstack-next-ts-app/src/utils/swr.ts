@@ -1,4 +1,4 @@
-import { User } from '@prisma/client'
+import type { User } from '@prisma/client'
 import useSWRImmutable from 'swr/immutable'
 
 async function fetcher<T>(
@@ -19,20 +19,8 @@ export function useUser() {
     }
   )
 
-  if (error) {
-    console.log(error)
-
-    return {
-      user: undefined,
-      accessToken: undefined,
-      mutate
-    }
-  }
-
-  const message = data?.message
-
-  if (message) {
-    console.log(message)
+  if (error || data?.message) {
+    console.log(error || data?.message)
 
     return {
       user: undefined,

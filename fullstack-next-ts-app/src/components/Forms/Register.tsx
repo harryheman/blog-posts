@@ -1,3 +1,4 @@
+import type { UserResponseData } from '@/types'
 import storageLocal from '@/utils/storageLocal'
 import { useUser } from '@/utils/swr'
 import MailOutlineIcon from '@mui/icons-material/MailOutline'
@@ -12,7 +13,7 @@ import {
   Typography
 } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
-import { User } from '@prisma/client'
+import type { User } from '@prisma/client'
 import { useRouter } from 'next/router'
 import { useState } from 'react'
 import FormFieldsWrapper from './Wrapper'
@@ -58,12 +59,14 @@ export default function RegisterForm({ closeModal }: Props) {
         body: JSON.stringify(formData)
       })
 
-      if (!res.ok) {
+      if (res.status === 409) {
         return setErrors({ email: true })
+      } else if (!res.ok) {
+        throw res
       }
 
-      const user = await res.json()
-      mutate({ user })
+      const data = (await res.json()) as UserResponseData
+      mutate(data)
 
       storageLocal.set('user_has_been_registered', true)
 
@@ -88,7 +91,7 @@ export default function RegisterForm({ closeModal }: Props) {
   return (
     <FormFieldsWrapper handleSubmit={handleSubmit} handleInput={handleInput}>
       <Typography variant='h4'>Register</Typography>
-      <FormControl>
+      <FormControl required>
         <InputLabel htmlFor='username'>Username</InputLabel>
         <Input
           sx={{ gap: theme.spacing(1) }}

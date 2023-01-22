@@ -4,7 +4,10 @@ import CustomHead from '@/components/Head'
 import PostPreview from '@/components/PostPreview'
 import prisma from '@/utils/prisma'
 import { Divider, Grid, Typography } from '@mui/material'
-import { GetServerSidePropsContext, InferGetServerSidePropsType } from 'next'
+import type {
+  GetServerSidePropsContext,
+  InferGetServerSidePropsType
+} from 'next'
 
 export default function Posts({
   posts

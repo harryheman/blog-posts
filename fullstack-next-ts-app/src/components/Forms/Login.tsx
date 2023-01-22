@@ -1,3 +1,4 @@
+import type { UserResponseData } from '@/types'
 import storageLocal from '@/utils/storageLocal'
 import { useUser } from '@/utils/swr'
 import MailOutlineIcon from '@mui/icons-material/MailOutline'
@@ -51,8 +52,8 @@ export default function LoginForm({ closeModal }: Props) {
         }
       }
 
-      const user = await res.json()
-      mutate({ user })
+      const data = (await res.json()) as UserResponseData
+      mutate(data)
 
       if (!storageLocal.get('user_has_been_registered')) {
         storageLocal.set('user_has_been_registered', true)

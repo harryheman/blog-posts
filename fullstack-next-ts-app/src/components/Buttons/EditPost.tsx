@@ -1,7 +1,7 @@
 import { useUser } from '@/utils/swr'
 import DriveFileRenameOutlineIcon from '@mui/icons-material/DriveFileRenameOutline'
 import { Button, IconButton } from '@mui/material'
-import { Post } from '@prisma/client'
+import type { Post } from '@prisma/client'
 import EditPostForm from '../Forms/EditPost'
 import Modal from '../Modal'
 

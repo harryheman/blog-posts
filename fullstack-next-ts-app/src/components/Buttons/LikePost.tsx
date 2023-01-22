@@ -2,7 +2,7 @@ import { useUser } from '@/utils/swr'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import { Badge, IconButton } from '@mui/material'
-import { Like, Post } from '@prisma/client'
+import type { Like, Post } from '@prisma/client'
 import { useRouter } from 'next/router'
 
 type Props = {
@@ -13,12 +13,11 @@ type Props = {
 }
 
 export default function LikePostButton({ post }: Props) {
-  const { user, accessToken } = useUser()
-  const like = post.likes.find((l) => l.userId === user?.id)
-  const isLiked = Boolean(like)
   const router = useRouter()
-
+  const { user, accessToken } = useUser()
   if (!user) return null
+  const like = post.likes.find((l) => l.userId === user.id)
+  const isLiked = Boolean(like)
 
   const likePost = async () => {
     let res: Response
