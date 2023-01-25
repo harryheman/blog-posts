@@ -37,7 +37,7 @@ export default function CreatePostForm({ closeModal }: Props) {
     e.preventDefault()
     const formData = Object.fromEntries(
       new FormData(e.target as HTMLFormElement)
-    ) as unknown as Pick<Post, 'title' | 'content' | 'authorId'>
+    ) as unknown as Pick<Post, 'title' | 'content'>
 
     if (formData.content.length < 50) {
       return setErrors({ content: formData.content.length })
@@ -77,7 +77,6 @@ export default function CreatePostForm({ closeModal }: Props) {
   return (
     <FormFieldsWrapper handleSubmit={handleSubmit}>
       <Typography variant='h4'>Create post</Typography>
-      <input type='hidden' name='authorId' defaultValue={user.id} />
       <FormControl required>
         <InputLabel htmlFor='title'>Title</InputLabel>
         <Input

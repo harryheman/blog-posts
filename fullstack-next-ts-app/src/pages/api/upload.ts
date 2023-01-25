@@ -1,7 +1,8 @@
+import { NextApiRequestWithUserId } from '@/types'
 import authGuard from '@/utils/authGuard'
 import prisma from '@/utils/prisma'
 import multer from 'multer'
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextApiResponse } from 'next'
 import nextConnect from 'next-connect'
 
 const upload = multer({
@@ -12,7 +13,7 @@ const upload = multer({
 })
 
 const uploadHandler = nextConnect<
-  NextApiRequest & { file?: Express.Multer.File },
+  NextApiRequestWithUserId & { file?: Express.Multer.File },
   NextApiResponse
 >()
 
@@ -23,11 +24,9 @@ uploadHandler.post(async (req, res) => {
     return res.status(500).json({ message: 'File write error' })
   }
 
-  const userId = req.file.filename.split('.')[0]
-
   try {
     const user = await prisma.user.update({
-      where: { id: userId },
+      where: { id: req.userId },
       data: {
         avatarUrl: req.file.path.replace('public', '')
       },

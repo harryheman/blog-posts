@@ -23,7 +23,7 @@ export default function LikePostButton({ post }: Props) {
     let res: Response
     try {
       if (isLiked) {
-        res = await fetch(`/api/like?id=${like?.id}`, {
+        res = await fetch(`/api/like?likeId=${like?.id}&postId=${post.id}`, {
           method: 'DELETE',
           headers: {
             Authorization: `Bearer ${accessToken}`
@@ -32,7 +32,7 @@ export default function LikePostButton({ post }: Props) {
       } else {
         res = await fetch('/api/like', {
           method: 'POST',
-          body: JSON.stringify({ postId: post.id, userId: user.id }),
+          body: JSON.stringify({ postId: post.id }),
           headers: {
             Authorization: `Bearer ${accessToken}`
           }

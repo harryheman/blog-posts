@@ -1,22 +1,26 @@
+import { NextApiRequestWithUserId } from '@/types'
 import authGuard from '@/utils/authGuard'
 import checkFields from '@/utils/checkFields'
 import prisma from '@/utils/prisma'
-import { Like } from '@prisma/client'
-import { NextApiRequest, NextApiResponse } from 'next'
+import { Like, Prisma } from '@prisma/client'
+import { NextApiResponse } from 'next'
 import nextConnect from 'next-connect'
 
-const likeHandler = nextConnect<NextApiRequest, NextApiResponse>()
+const likeHandler = nextConnect<NextApiRequestWithUserId, NextApiResponse>()
 
 likeHandler.post(async (req, res) => {
-  const data = JSON.parse(req.body) as Omit<Like, 'id'>
+  const data = JSON.parse(req.body) as Pick<Like, 'postId'>
 
-  if (!checkFields(data, ['postId', 'userId'])) {
+  if (!checkFields(data, ['postId'])) {
     return res.status(400).json({ message: 'Some required fields are missing' })
   }
 
   try {
     const like = await prisma.like.create({
-      data
+      data: {
+        postId: data.postId,
+        userId: req.userId
+      }
     })
     res.status(201).json(like)
   } catch (e) {
@@ -26,16 +30,22 @@ likeHandler.post(async (req, res) => {
 })
 
 likeHandler.delete(async (req, res) => {
-  const id = req.query.id as string
+  const { likeId, postId } = req.query as Record<string, string>
 
-  if (!id) {
-    return res.status(400).json({ message: 'Like ID is missing' })
+  if (!likeId || !postId) {
+    return res
+      .status(400)
+      .json({ message: 'Some required queries are missing' })
   }
 
   try {
     const like = await prisma.like.delete({
       where: {
-        id
+        id_userId_postId: {
+          id: likeId,
+          userId: req.userId,
+          postId
+        }
       }
     })
     res.status(200).json(like)

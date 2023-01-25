@@ -1,6 +1,6 @@
 import type { User } from '@prisma/client'
 import type { CookieSerializeOptions } from 'cookie'
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiHandler, NextApiRequest, NextApiResponse } from 'next'
 
 export type CookieArgs = {
   name: string
@@ -17,9 +17,22 @@ export type NextApiHandlerWithCookie = (
   res: NextApiResponseWithCookie
 ) => unknown | Promise<unknown>
 
-export type NextApiMiddleware<H, R> = (
-  handler: H
-) => (req: NextApiRequest, res: R) => void
+export type CookiesMiddleware = (
+  handler: NextApiHandlerWithCookie
+) => (req: NextApiRequest, res: NextApiResponseWithCookie) => void
+
+export type NextApiRequestWithUserId = NextApiRequest & {
+  userId: string
+}
+
+export type NextApiHandlerWithUserId = (
+  req: NextApiRequestWithUserId,
+  res: NextApiResponse
+) => unknown | Promise<unknown>
+
+export type AuthGuardMiddleware = (
+  handler: NextApiHandlerWithUserId
+) => (req: NextApiRequestWithUserId, res: NextApiResponse) => void
 
 export type Block = {
   id: number

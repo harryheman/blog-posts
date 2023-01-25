@@ -46,7 +46,7 @@ const loginHandler: NextApiHandlerWithCookie = async (req, res) => {
     )
 
     const accessToken = await jwt.sign(
-      { payload: process.env.ACCESS_TOKEN_PAYLOAD },
+      { userId: user.id },
       process.env.ACCESS_TOKEN_SECRET,
       {
         expiresIn: '1d'

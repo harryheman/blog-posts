@@ -26,6 +26,8 @@ model Post {
   likes     Like[]
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
+
+  @@unique([id, authorId])
 }
 
 model Like {
@@ -34,4 +36,6 @@ model Like {
   userId String
   post   Post   @relation(fields: [postId], references: [id], onUpdate: Cascade, onDelete: Cascade)
   postId String
+
+  @@unique([id, userId, postId])
 }

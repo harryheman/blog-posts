@@ -1,11 +1,6 @@
 import { serialize } from 'cookie'
 import { NextApiResponse } from 'next'
-import {
-  CookieArgs,
-  NextApiHandlerWithCookie,
-  NextApiMiddleware,
-  NextApiResponseWithCookie
-} from '../types'
+import { CookieArgs, CookiesMiddleware } from '../types'
 
 const cookieFn = (
   res: NextApiResponse,
@@ -22,10 +17,7 @@ const cookieFn = (
   res.setHeader('Set-Cookie', serialize(name, String(stringValue), options))
 }
 
-const cookies: NextApiMiddleware<
-  NextApiHandlerWithCookie,
-  NextApiResponseWithCookie
-> = (handler) => (req, res) => {
+const cookies: CookiesMiddleware = (handler) => (req, res) => {
   res.cookie = (args: CookieArgs) => cookieFn(res, args)
 
   return handler(req, res)

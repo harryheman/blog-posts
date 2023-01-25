@@ -1,20 +1,23 @@
+import { NextApiRequestWithUserId } from '@/types'
 import authGuard from '@/utils/authGuard'
 import checkFields from '@/utils/checkFields'
 import prisma from '@/utils/prisma'
 import { Post } from '@prisma/client'
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextApiResponse } from 'next'
 import nextConnect from 'next-connect'
 
-const postsHandler = nextConnect<NextApiRequest, NextApiResponse>()
+const postsHandler = nextConnect<NextApiRequestWithUserId, NextApiResponse>()
 
 postsHandler.post(async (req, res) => {
   const data: Pick<Post, 'title' | 'content' | 'authorId'> = JSON.parse(
     req.body
   )
 
-  if (!checkFields(data, ['title', 'content', 'authorId'])) {
+  if (!checkFields(data, ['title', 'content'])) {
     res.status(400).json({ message: 'Some required fields are missing' })
   }
+
+  data.authorId = req.userId
 
   try {
     const post = await prisma.post.create({
@@ -38,7 +41,9 @@ postsHandler.put(async (req, res) => {
 
   try {
     const post = await prisma.post.update({
-      where: { id: data.postId },
+      where: {
+        id_authorId: { id: data.postId, authorId: req.userId }
+      },
       data: {
         title: data.title,
         content: data.content
@@ -63,7 +68,10 @@ postsHandler.delete(async (req, res) => {
   try {
     const post = await prisma.post.delete({
       where: {
-        id
+        id_authorId: {
+          id,
+          authorId: req.userId
+        }
       }
     })
     res.status(200).json(post)
