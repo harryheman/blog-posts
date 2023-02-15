@@ -1,0 +1,45 @@
+body {
+  margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.tree-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tree-box svg {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.tree-box rect {
+  fill: rgb(255, 229, 153);
+  fill-opacity: 1;
+  stroke: rgb(0, 0, 0);
+  stroke-width: 2;
+  user-select: none;
+  cursor: pointer;
+  transition: fill 250ms ease-in-out;
+}
+
+.tree-box g:hover > rect {
+  fill: rgb(255, 204, 50);
+}
+
+.tree-box path {
+  fill: none;
+  stroke: rgb(43, 120, 228) !important;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 0.8, 12;
+}
+
+.tree-box text {
+  cursor: pointer;
+  z-index: 1;
+}
