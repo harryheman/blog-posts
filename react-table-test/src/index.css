@@ -1,0 +1,36 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  white-space: nowrap;
+  padding: 0.5rem;
+}
+
+th {
+  background: rgba(0, 0, 0, 0.1);
+}
+
+tbody tr:nth-child(2n) {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+h1 {
+  text-align: center;
+}
