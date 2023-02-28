@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+:root {
+  --margin: 0.75rem 0;
+  --dark: #282c34;
+  --light: #f7f7f7;
+  --primary: #0275d8;
+  --success: #5cb85c;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  color: var(--light);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--dark);
+}
+
+/* popup */
+.search-form {
+  --background-color: var(--dark);
+
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+  max-width: calc(320px + 2rem);
+}
+
+.search-field {
+  position: relative;
+}
+
+.search-input-field {
+  width: 320px;
+  margin: var(--margin);
+  padding: 0.25rem 0.5rem;
+  padding-right: 1.75rem;
+  border: none;
+  border-radius: 2px;
+  color: var(--dark);
+  text-align: center;
+}
+
+.search-input-field:focus-visible {
+  outline: none;
+}
+
+.search-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 5px;
+  width: 20px;
+  height: 20px;
+  background: none;
+  background-image: url('../assets/search.png');
+  background-size: 100%;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.search-results {
+  --text-color: var(--light);
+  --selection-background: var(--success);
+  --selection-color: var(--dark);
+}
+
+.result-item {
+  margin: var(--margin);
+  cursor: pointer;
+}
+
+.result-item span,
+.result-item small {
+  color: var(--text-color);
+}
+
+.result-item mark {
+  background-color: var(--selection-background);
+  color: var(--selection-color);
+}
+
+.search-item-uri {
+  font-size: 0.8rem;
+}
+
+.nothing-found {
+  text-align: center;
+}
+
+.nothing-found a {
+  text-decoration: none;
+  border-bottom: 1px dashed var(--light);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  visibility: hidden;
+  z-index: -10;
+}
+
+::placeholder {
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+/* options */
+.options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.options label {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.options input[type='checkbox'] {
+  justify-self: flex-start;
+  width: 18px;
+  height: 18px;
+  accent-color: var(--primary);
+}
+
+.options button {
+  color: var(--light);
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  background: var(--primary);
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  transition: box-shadow 250ms ease-in-out;
+}
+
+.options button:hover {
+  box-shadow: inset 1px 1px 1em rgba(0, 0, 0, 0.15),
+    inset -1px -1px 1em rgba(0, 0, 0, 0.15);
+}

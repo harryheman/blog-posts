@@ -1,0 +1,47 @@
+{
+  "name": "mdn-finder",
+  "displayName": "MDN Finder",
+  "version": "0.0.1",
+  "description": "MDN search browser extension",
+  "author": "Igor Agapov",
+  "scripts": {
+    "dev": "plasmo dev",
+    "build": "plasmo build",
+    "package": "plasmo package"
+  },
+  "dependencies": {
+    "@plasmohq/storage": "^1.0.0",
+    "downshift": "^6.1.7",
+    "flexsearch": "0.7.21",
+    "fzf": "^0.5.1",
+    "plasmo": "0.64.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "swr": "^2.0.3"
+  },
+  "devDependencies": {
+    "@plasmohq/prettier-plugin-sort-imports": "3.6.1",
+    "@types/chrome": "0.0.210",
+    "@types/flexsearch": "^0.7.1",
+    "@types/node": "18.11.18",
+    "@types/react": "18.0.27",
+    "@types/react-dom": "18.0.10",
+    "prettier": "2.8.3",
+    "typescript": "4.9.4"
+  },
+  "manifest": {
+    "web_accessible_resources": [
+      {
+        "resources": [
+          "assets/search-index.json"
+        ],
+        "matches": [
+          "https://*/*"
+        ]
+      }
+    ],
+    "host_permissions": [
+      "https://*/*"
+    ]
+  }
+}
