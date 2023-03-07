@@ -1,1 +1,1 @@
-# Code from my articles and tutorials :metal:
+# Code from my articles and tutorials.
