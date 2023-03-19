@@ -1,0 +1,13 @@
+{
+  "name": "trpc-fullstack-app",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "scripts": {
+    "dev": "concurrently \"yarn --cwd ./server start\" \"yarn --cwd ./client dev\""
+  }
+}

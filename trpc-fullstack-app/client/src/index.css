@@ -1,0 +1,11 @@
+body {
+  margin: 0;
+}
+
+#root {
+  padding: 1rem;
+}
+
+ul {
+  padding-inline: 1rem;
+}
