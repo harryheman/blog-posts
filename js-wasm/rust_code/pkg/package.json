@@ -1,0 +1,14 @@
+{
+  "name": "rust-code",
+  "version": "0.1.0",
+  "files": [
+    "rust_code_bg.wasm",
+    "rust_code.js",
+    "rust_code.d.ts"
+  ],
+  "module": "rust_code.js",
+  "types": "rust_code.d.ts",
+  "sideEffects": [
+    "./snippets/*"
+  ]
+}
