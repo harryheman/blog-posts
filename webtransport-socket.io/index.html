@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WebTransport</title>
+    <link rel="icon" href="data:." />
+    <script src="/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <h1>WebTransport</h1>
+    <p>Подключение: <span id="connection">Отсутствует</span></p>
+    <p>Транспорт: <span id="transport">Не определен</span></p>
+
+    <script>
+      const $connection = document.getElementById('connection')
+      const $transport = document.getElementById('transport')
+
+      const socket = io({
+        transportOptions: {
+          webtransport: {
+            hostname: '127.0.0.1',
+          },
+        },
+      })
+
+      socket.on('connect', () => {
+        console.log(
+          `connected with transport ${socket.io.engine.transport.name}`,
+        )
+
+        $connection.textContent = 'Установлено'
+        $transport.textContent = socket.io.engine.transport.name
+
+        socket.io.engine.on('upgrade', (transport) => {
+          console.log(`transport upgraded to ${transport.name}`)
+
+          $transport.textContent = transport.name
+        })
+      })
+
+      socket.on('connect_error', (err) => {
+        console.log(`connect_error due to ${err.message}`)
+      })
+
+      socket.on('disconnect', (reason) => {
+        console.log(`disconnect due to ${reason}`)
+
+        $connection.textContent = 'Отсутствует'
+        $transport.textContent = 'Не определен'
+      })
+    </script>
+  </body>
+</html>
