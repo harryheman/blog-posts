@@ -1,0 +1,13 @@
+body {
+  background-color: #333;
+}
+
+p {
+  color: #ddd;
+}
+
+button:has(span) {
+  pointer-events: none;
+  user-select: none;
+  color: rgba(0, 0, 0, 0.5);
+}
