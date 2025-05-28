@@ -1,0 +1,7 @@
+---
+- name: Установить OpenJDK 16
+  become: true
+  apt:
+    name: openjdk-16-jdk
+    state: present
+    update_cache: yes

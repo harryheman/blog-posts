@@ -1,0 +1,16 @@
+---
+- name: Добавить GPG-ключ NodeSource
+  become: true
+  # Чтобы apt доверял этому репозиторию
+  apt_key:
+    url: 'https://deb.nodesource.com/gpgkey/nodesource.gpg.key'
+    state: present
+
+- name: Добавить NodeSource репозиторий
+  become: true
+  # Это позволяет установить Node.js через apt как обычный пакет,
+  # но из NodeSource, а не из стандартного репозитория
+  apt_repository:
+    repo: 'deb https://deb.nodesource.com/node_{{ node_version }} {{ ansible_distribution_release }} main'
+    state: present
+    filename: 'nodesource'

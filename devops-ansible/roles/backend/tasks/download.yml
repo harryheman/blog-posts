@@ -1,0 +1,23 @@
+---
+- name: Получить список артефактов бэкенда из Nexus
+  uri:
+    url: '{{ nexus_service_url }}/rest/v1/search/assets?repository={{ nexus_repo_backend_name }}&maven.extension=jar&sort=version'
+    method: GET
+    url_username: '{{ nexus_repo_user }}'
+    url_password: '{{ nexus_repo_pass }}'
+    force_basic_auth: yes
+    return_content: yes
+  register: nexus_response
+
+- name: Извлечь последнюю версию бэкенда из Nexus
+  set_fact:
+    download_url: "{{ nexus_response.json['items'][0].downloadUrl }}"
+
+- name: Скачать  последнюю версию бэкенда из Nexus
+  become: true
+  get_url:
+    url: '{{ download_url }}'
+    dest: '{{ jar_path }}'
+    url_username: '{{ nexus_repo_user }}'
+    url_password: '{{ nexus_repo_pass }}'
+    force_basic_auth: yes

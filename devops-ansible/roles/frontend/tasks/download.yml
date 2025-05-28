@@ -1,0 +1,37 @@
+---
+- name: Получить последнюю версию фронтенда из Nexus
+  uri:
+    # Адрес Nexus-сервера
+    # `sort=version` — сортировка по версии, чтобы последняя версия была первой в списке
+    url: '{{ nexus_service_url }}/rest/v1/search/assets?repository={{ nexus_repo_frontend_name }}&sort=version'
+    method: GET
+    url_username: '{{ nexus_repo_user }}'
+    url_password: '{{ nexus_repo_pass }}'
+    # Принудительно использовать basic auth
+    force_basic_auth: yes
+    # Вернуть содержимое ответа (`.json`), чтобы мы могли с ним работать
+    return_content: yes
+  # Сохраняем результат запроса в переменную `nexus_response`
+  register: nexus_response
+
+- name: Извлечь последнюю версию фронтенда из Nexus
+  set_fact:
+    download_url: "{{ nexus_response.json['items'][0].downloadUrl }}"
+
+- name: Скачать последнюю версию фронтенда из Nexus
+  get_url:
+    url: '{{ download_url }}'
+    # Куда скачать?
+    dest: '/tmp/frontend.tar.gz'
+    url_username: '{{ nexus_repo_user }}'
+    url_password: '{{ nexus_repo_pass }}'
+    force_basic_auth: yes
+
+- name: Распаковать фронтенд
+  become: true
+  unarchive:
+    src: '/tmp/frontend.tar.gz'
+    # Куда распаковать?
+    dest: '{{ frontend_dest }}'
+    # Файл уже на удаленном сервере, не нужно его копировать с локальной машины
+    remote_src: yes

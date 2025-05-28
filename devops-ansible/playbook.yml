@@ -1,0 +1,8 @@
+---
+- name: Деплой backend и frontend
+  hosts: all
+  remote_user: ansible
+
+  roles:
+    - backend
+    - frontend

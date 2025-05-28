@@ -1,0 +1,14 @@
+[Unit]
+Description=Backend Service
+After=network.target
+
+[Service]
+User={{ backend_user }}
+Group={{ backend_user }}
+StandardOutput=append:/var/app-name/backend.log
+WorkingDirectory=/opt/app-name/bin
+ExecStart=/usr/bin/java -jar backend.jar
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

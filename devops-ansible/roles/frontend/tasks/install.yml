@@ -1,0 +1,15 @@
+---
+- name: Установить Node.js и npm
+  become: true
+  apt:
+    name:
+      - nodejs
+    state: present
+    update_cache: yes
+
+- name: Установить http-server
+  become: true
+  community.general.npm:
+    name: http-server
+    # Глобальная установка
+    global: yes

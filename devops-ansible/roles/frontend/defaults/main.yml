@@ -1,0 +1,20 @@
+# Данные для доступа к репозиторию Nexus, в котором хранится архив фронта `.tar.gz`.
+# В корне проекта необходимо создать файл `.env` с этими данными
+nexus_repo_url: "{{ lookup('env', 'NEXUS_REPO_URL') }}"
+nexus_service_url: "{{ lookup('env', 'NEXUS_SERVICE_URL') }}"
+nexus_repo_frontend_name: "{{ lookup('env', 'NEXUS_REPO_FRONTEND_NAME') }}"
+nexus_repo_user: "{{ lookup('env', 'NEXUS_REPO_USER') }}"
+nexus_repo_pass: "{{ lookup('env', 'NEXUS_REPO_PASS') }}"
+
+# Пользователь для развертывания фронта
+frontend_user: 'www-data'
+# Директория для распаковки архива
+frontend_dest: '/var/www-data'
+
+# Версия Node.js
+node_version: '20.x'
+
+# Порт сервера для раздачи статики
+frontend_port: 80
+# Адрес бэка
+backend_url: 'http://localhost:8080'

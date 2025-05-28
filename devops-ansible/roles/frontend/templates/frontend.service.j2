@@ -1,0 +1,14 @@
+[Unit]
+Description=Frontend Service
+After=network.target
+
+[Service]
+User={{ frontend_user }}
+Group={{ frontend_user }}
+WorkingDirectory={{ frontend_dest }}/dist/frontend
+ExecStart=/usr/bin/http-server -p {{ frontend_port }} --proxy {{ backend_url }}
+Restart=always
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+
+[Install]
+WantedBy=multiuser.target

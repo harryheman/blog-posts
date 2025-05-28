@@ -1,0 +1,5 @@
+all:
+  hosts:
+    vm1:
+      ansible_host: 89.169.145.249
+      ansible_user: ansible

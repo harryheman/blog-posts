@@ -1,0 +1,7 @@
+---
+# Задачи выполняются в порядке определения
+- include_tasks: nodesource.yml
+- include_tasks: install.yml
+- include_tasks: setup.yml
+- include_tasks: download.yml
+- include_tasks: service.yml

@@ -1,0 +1,13 @@
+# Данные для доступа к репозиторию Nexus, в котором хранится файл бэка `.jar`.
+# В корне проекта необходимо создать файл `.env` с этими данными
+nexus_repo_url: "{{ lookup('env', 'NEXUS_REPO_URL') }}"
+nexus_service_url: "{{ lookup('env', 'NEXUS_SERVICE_URL') }}"
+nexus_repo_backend_name: "{{ lookup('env', 'NEXUS_REPO_BACKEND_NAME') }}"
+nexus_repo_user: "{{ lookup('env', 'NEXUS_REPO_USER') }}"
+nexus_repo_pass: "{{ lookup('env', 'NEXUS_REPO_PASS') }}"
+
+# Пользователь для развертывания бэка
+backend_user: 'backend'
+
+# Путь к исполняемому файлу
+jar_path: '/opt/app-name/bin/backend.jar'

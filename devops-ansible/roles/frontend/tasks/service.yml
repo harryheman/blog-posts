@@ -1,0 +1,19 @@
+---
+- name: Скопировать systemd unit-файл
+  become: true
+  template:
+    src: frontend.service.j2
+    dest: /etc/systemd/system/frontend.service
+    mode: '0644'
+
+- name: Перезапустить systemd
+  become: true
+  systemd:
+    daemon_reload: yes
+
+- name: Включить и запустить сервис фронтенда
+  become: true
+  systemd:
+    name: frontend
+    enabled: yes
+    state: started

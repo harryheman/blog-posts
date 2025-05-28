@@ -1,0 +1,26 @@
+---
+- name: Создать сервисного пользователя backend
+  become: true
+  user:
+    name: '{{ backend_user }}'
+    create_home: no
+    system: yes
+    shell: /usr/sbin/nologin
+
+- name: Убедиться, что директория /opt/app-name/bin существует
+  become: true
+  file:
+    path: /opt/app-name/bin
+    state: directory
+    owner: '{{ backend_user }}'
+    group: '{{ backend_user }}'
+    mode: '0755'
+
+- name: Убедиться, что директория /var/app-name существует
+  become: true
+  file:
+    path: /var/app-name
+    state: directory
+    owner: '{{ backend_user }}'
+    group: '{{ backend_user }}'
+    mode: '0755'

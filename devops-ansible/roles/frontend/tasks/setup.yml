@@ -1,0 +1,19 @@
+---
+- name: Создать сервисного пользователя www-data
+  become: true
+  user:
+    name: '{{ frontend_user }}'
+    # Не создавать домашнюю/пользовательскую директорию
+    create_home: no
+    # Системный пользователь
+    system: yes
+    shell: /usr/sbin/nologin
+
+- name: Создать директорию {{ frontend_dest }}
+  become: true
+  file:
+    path: '{{ frontend_dest }}'
+    state: directory
+    owner: '{{ frontend_user }}'
+    group: '{{ frontend_user }}'
+    mode: '0755'

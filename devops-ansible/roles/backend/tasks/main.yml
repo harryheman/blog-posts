@@ -1,0 +1,6 @@
+---
+# Задачи выполняются в порядке определения
+- import_tasks: install.yml
+- import_tasks: setup.yml
+- import_tasks: download.yml
+- import_tasks: service.yml
