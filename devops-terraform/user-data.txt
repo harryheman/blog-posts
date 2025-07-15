@@ -1,0 +1,8 @@
+#cloud-config
+users:
+  - name: ansible
+    shell: /bin/bash
+    sudo: "ALL=(ALL) NOPASSWD:ALL"
+    ssh_authorized_keys:
+      # Заменить
+      - ssh-rsa AAA...
