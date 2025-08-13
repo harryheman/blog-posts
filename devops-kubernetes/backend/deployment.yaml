@@ -1,0 +1,64 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # Название деплоя
+  name: backend
+  # Метки
+  labels:
+    app: backend
+spec:
+  # Количество реплик (копий) приложения
+  replicas: 1
+  # Лимит историй релизов.
+  # Это позволяет откатиться к предыдущим версиям приложения
+  # в случае необходимости
+  revisionHistoryLimit: 12
+  # Стратегия обновления приложения.
+  strategy:
+    # Поэтапное обновление, без остановки приложения
+    type: RollingUpdate
+    rollingUpdate:
+      # Максимальное количество недоступных реплик во время обновления
+      maxUnavailable: 0
+      # Максимальное количество новых реплик, которые могут быть созданы во время обновления
+      maxSurge: 20%
+  # Селектор для выбора подов, к которым будет применяться этот деплой
+  selector:
+    matchLabels:
+      app: backend
+  # Шаблон для создания подов
+  template:
+    metadata:
+      labels:
+        app: backend
+    spec:
+      containers:
+        - name: backend
+          # Образ приложения
+          image: gitlab.my-services.ru:5050/my-store/my-store-backend:1.0.2213512
+          imagePullPolicy: IfNotPresent
+          # Ресурсы, которые будут выделены для контейнера
+          resources:
+            requests:
+              cpu: '0.5'
+              memory: '256Mi'
+            limits:
+              cpu: '1'
+              memory: '512Mi'
+          # Порты
+          ports:
+            - name: backend
+              containerPort: 8081
+          # Проверка состояния приложения
+          livenessProbe:
+            httpGet:
+              path: /health
+              port: 8081
+            initialDelaySeconds: 15
+            periodSeconds: 30
+            timeoutSeconds: 2
+            failureThreshold: 6
+      # Секреты для доступа к Gitlab Registry
+      imagePullSecrets:
+        - name: docker-config-secret

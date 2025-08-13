@@ -1,0 +1,25 @@
+apiVersion: autoscaling.k8s.io/v1
+kind: VerticalPodAutoscaler
+metadata:
+  name: backend-vpa
+spec:
+  # Цель VPA - Deployment с именем "backend"
+  targetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: backend
+  # Политика обновления
+  updatePolicy:
+    # Режим обновления - "Off" означает, что VPA не будет автоматически изменять ресурсы
+    # контейнеров, но будет предоставлять рекомендации
+    # для ручного применения.
+    # Это позволяет избежать неожиданных изменений в работе приложения.
+    # "Auto" означает автоматическое применение изменений
+    updateMode: 'Off'
+  resourcePolicy:
+    # Политики ресурсов для контейнеров в Deployment
+    containerPolicies:
+      # Применяем политику ко всем контейнерам
+      - containerName: '*'
+        # Ресурсы, которые будут контролироваться VPA
+        controlledResources: ['cpu', 'memory']

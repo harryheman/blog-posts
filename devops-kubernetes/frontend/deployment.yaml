@@ -1,0 +1,56 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  # Название деплоя
+  name: frontend
+  # Метки
+  labels:
+    app: frontend
+spec:
+  # Количество реплик (копий) приложения
+  replicas: 1
+  # Лимит историй релизов.
+  # Это позволяет откатиться к предыдущим версиям приложения
+  # в случае необходимости
+  revisionHistoryLimit: 12
+  # Селектор для выбора подов, к которым будет применяться этот деплой
+  selector:
+    matchLabels:
+      app: frontend
+  # Шаблон для создания подов
+  template:
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      containers:
+        - name: frontend
+          # Образ приложения
+          image: gitlab.my-services.ru:5050/my-store/my-store-frontend:1.0.2213511
+          imagePullPolicy: IfNotPresent
+          # Ресурсы, которые будут выделены для контейнера
+          resources:
+            requests:
+              cpu: '0.5'
+              memory: '256Mi'
+            limits:
+              cpu: '1'
+              memory: '512Mi'
+          # Порты
+          ports:
+            - containerPort: 8080
+          # Какие тома и куда (внутри контейнера) монтировать
+          volumeMounts:
+            - name: nginx-config-volume
+              mountPath: /etc/nginx/conf.d/default.conf
+              subPath: default.conf
+      volumes:
+        - name: nginx-config-volume
+          # Ссылка на ConfigMap, который содержит конфигурацию Nginx
+          configMap:
+            name: frontend-nginx-config
+      # Секреты для доступа к Gitlab Registry.
+      # Secrets из бэкенда
+      imagePullSecrets:
+        - name: docker-config-secret
